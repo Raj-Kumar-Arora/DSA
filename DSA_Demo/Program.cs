@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using DSA.Common;
-using DSA.Common.Enums;
-using DSA.Trees;
+using DSA.Enums;
 
 //TODO - make a new version of this project => web api project with swagger support
 
