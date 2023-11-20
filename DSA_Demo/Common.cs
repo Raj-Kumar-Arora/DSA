@@ -12,7 +12,7 @@ namespace DSA.Common
     {
         enum DSA_Options
         {
-            Linkedlist = 1, Arrays, Strings, Stacks, Queues, Trees, Graphs, EXIT = 9
+            Linkedlists = 1, Arrays, Strings, Stacks, Queues, Trees, Graphs, EXIT = 9
         }
         enum LinkedList_Options
         {

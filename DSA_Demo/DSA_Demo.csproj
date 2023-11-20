@@ -7,4 +7,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Arrays\Arrays.csproj" />
+    <ProjectReference Include="..\Graphs\Graphs.csproj" />
+    <ProjectReference Include="..\LinkedLists\LinkedLists.csproj" />
+    <ProjectReference Include="..\Queues\Queues.csproj" />
+    <ProjectReference Include="..\Stacks\Stacks.csproj" />
+    <ProjectReference Include="..\Strings\Strings.csproj" />
+    <ProjectReference Include="..\Trees\Trees.csproj" />
+  </ItemGroup>
+
 </Project>
