@@ -36,7 +36,7 @@ namespace DSA
                 }
 
                 Console.WriteLine(" NULL");
-                Console.WriteLine(Constants.LINE_SEPERATOR);
+                Console.WriteLine(Constants.STR_LINE_SEPERATOR);
                 Console.WriteLine();
             }
             //public void Insert(int data, int refData = 0, bool? before=null)
@@ -97,7 +97,7 @@ namespace DSA
                 {
                     int position = 1;
 
-                    Console.WriteLine(Constants.LINE_SEPERATOR);
+                    Console.WriteLine(Constants.STR_LINE_SEPERATOR);
 
                     Node? tmp = Start;
                     while (tmp != null)
@@ -118,7 +118,7 @@ namespace DSA
                         Console.WriteLine("\t " + data + " NOT FOUND");
 
 
-                    Console.WriteLine(Constants.LINE_SEPERATOR);
+                    Console.WriteLine(Constants.STR_LINE_SEPERATOR);
                     Console.WriteLine();
 
                 }
@@ -137,7 +137,7 @@ namespace DSA
                 {
                     int position = 1;
 
-                    Console.WriteLine(Constants.LINE_SEPERATOR);
+                    Console.WriteLine(Constants.STR_LINE_SEPERATOR);
 
                     Node? tmp = Start;
                     while (tmp != null)
@@ -166,7 +166,7 @@ namespace DSA
                         Console.WriteLine("\t " + data + " NOT FOUND");
 
 
-                    Console.WriteLine(Constants.LINE_SEPERATOR);
+                    Console.WriteLine(Constants.STR_LINE_SEPERATOR);
                     Console.WriteLine();
                 }
             }

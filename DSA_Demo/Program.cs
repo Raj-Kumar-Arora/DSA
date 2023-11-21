@@ -8,9 +8,9 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine(Constants.LINE_SEPERATOR);
+        Console.WriteLine(Constants.STR_LINE_SEPERATOR);
         Console.WriteLine("\t*** Demo of all DSA features ***");
-        Console.WriteLine(Constants.LINE_SEPERATOR);
+        Console.WriteLine(Constants.STR_LINE_SEPERATOR);
         DSA_Options selectedOption;
         int selectedOptionInt;
 

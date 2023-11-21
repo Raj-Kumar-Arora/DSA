@@ -1,4 +1,4 @@
-﻿namespace LinkedLists
+﻿namespace DSA.LinkedLists
 {
     namespace Enums
     {

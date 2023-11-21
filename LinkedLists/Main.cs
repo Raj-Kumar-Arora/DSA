@@ -1,5 +1,5 @@
-﻿using LinkedLists.Enums;
-using DSA.Common;
+﻿using DSA.Common;
+using DSA.LinkedLists.Enums;
 
 
 //TODO - make a new version of this project => web api project with swagger support
@@ -11,7 +11,9 @@ namespace DSA.LinkedLists
         {
             int selectedSubOptionInt = -1;
             LinkedList_Options selectedSubOption;
-            LinkedList ll = new LinkedList();
+
+            //TODO - add option to create LinkedList/Circular LL/DoublyLL based on user selection
+            LinkedList ll = new ();
 
             do
             {
@@ -38,7 +40,7 @@ namespace DSA.LinkedLists
 
                 selectedSubOption = (LinkedList_Options)selectedSubOptionInt;
                 Console.WriteLine("Selected sub-option: " + selectedSubOption.ToString() + "\n");
-                Console.WriteLine(Constants.LINE_SEPERATOR);
+                Console.WriteLine(Constants.STR_LINE_SEPERATOR);
 
                 switch (selectedSubOption)
                 {
