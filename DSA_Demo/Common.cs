@@ -2,7 +2,8 @@
 {
     enum DSA_Options
     {
-        Linkedlists = 1, Arrays, Strings, Stacks, Queues, Trees, Graphs, EXIT = 9
+        Linkedlists = 1, Arrays, Strings, Stacks, Queues, Trees, Graphs, 
+        EXIT = 0
     }
 }
 

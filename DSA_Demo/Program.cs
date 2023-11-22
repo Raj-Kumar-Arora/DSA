@@ -24,7 +24,7 @@ internal class Program
             Console.WriteLine("5. Queues");
             Console.WriteLine("6. Trees");
             Console.WriteLine("7. Graphs");
-            Console.WriteLine("9. EXIT !!!");
+            Console.WriteLine("0. EXIT !!!");
             if (int.TryParse(Console.ReadLine(), out selectedOptionInt) == false)
             {
                 Console.WriteLine("!!! Wrong input selection !!!\n");
@@ -48,7 +48,7 @@ internal class Program
                     case DSA_Options.Graphs:        DSA.Graphs.Main.Start();        break;
                         //Console.WriteLine("Selected option: " + selectedOption.ToString() + "\t is not yet implemented!\n");
                     case DSA_Options.EXIT:
-                        Console.WriteLine("You selected 9. Exiting...");
+                        Console.WriteLine("You selected 0. Exiting...");
                         break;
                     default:
                         Console.WriteLine("!!! Wrong input selection !!!\n");

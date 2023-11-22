@@ -12,7 +12,7 @@ namespace DSA
             #region Basic LinkedList Operations
             public void Create()
             {
-                Console.Write("Enter no of nodes:");
+                Console.Write("Enter no of nodes: ");
                 int noOfNodes;
                 if (int.TryParse(Console.ReadLine(), out noOfNodes) == false)
                 {
@@ -42,7 +42,7 @@ namespace DSA
             //public void Insert(int data, int refData = 0, bool? before=null)
             public void Insert ()
             {
-                Console.Write("Enter value of data for new node:");
+                Console.Write("Enter value of data for new node: ");
                 int data;
                 if (int.TryParse(Console.ReadLine(), out data) == false)
                 {
@@ -92,7 +92,7 @@ namespace DSA
             public void Search()
             {
                 int data;
-                Console.Write("Enter value of data to search:");
+                Console.Write("Enter value of data to search: ");
                 if (int.TryParse(Console.ReadLine(), out data))
                 {
                     int position = 1;
@@ -128,7 +128,7 @@ namespace DSA
             public void Update()
             {
                 int data;
-                Console.Write("Enter value of data to update:");
+                Console.Write("Enter value of data to update: ");
                 if (int.TryParse(Console.ReadLine(), out data) == false )
                 {
                     Console.WriteLine("Please enter a valid integer no.");
@@ -145,7 +145,7 @@ namespace DSA
                         if (tmp.data == data)
                         {
                             int newData;
-                            Console.WriteLine("Enter new value of data to update:");
+                            Console.Write("Enter new value of data to update: ");
                             if (int.TryParse(Console.ReadLine(), out newData) == false)
                             {
                                 Console.WriteLine("Please enter a valid integer no.");
@@ -174,7 +174,7 @@ namespace DSA
             public void Delete()
             {
                 int data;
-                Console.Write("Enter value of data to delete:");
+                Console.Write("Enter value of data to delete: ");
                 if (int.TryParse(Console.ReadLine(), out data) == false)
                 {
                     Console.WriteLine("Please enter a valid integer no.");
@@ -236,7 +236,7 @@ namespace DSA
                 Console.WriteLine("1. Sorting list by Exchanging Data");
                 Console.WriteLine("2. Sorting list by Exchanging Links");
                 Console.WriteLine();
-                Console.Write("Enter choice:");
+                Console.Write("Enter choice: ");
 
                 int selectedSortOptionInt;
                 int.TryParse(Console.ReadLine(), out selectedSortOptionInt);
@@ -252,9 +252,9 @@ namespace DSA
             }
             private void Sort_ExchangeDataElements()
             {
-                for (Node i = Start; i.next != null; i = i.next)
+                for (Node?i = Start; i?.next != null; i = i.next)
                 {
-                    for (Node j = i.next; j != null; j = j.next)
+                    for (Node? j = i.next; j != null; j = j.next)
                     {
                         if (i.data > j.data)
                         {

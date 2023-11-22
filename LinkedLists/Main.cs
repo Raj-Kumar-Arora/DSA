@@ -18,22 +18,22 @@ namespace DSA.LinkedLists
             do
             {
                 Console.WriteLine("\nSupported sub-options in LinkedList:");
-                Console.WriteLine("10. Create list");
-                Console.WriteLine("11. Display list");
-                Console.WriteLine("12. Insert Node (At start/end/specific position/before or afer specific node)");
-                Console.WriteLine("13. Search for an element");
-                Console.WriteLine("14. Update a node value");
-                Console.WriteLine("15. Delete a node ");
-                Console.WriteLine("16. Reverse list");
-                Console.WriteLine("17. Sorting list (Exchanging Data/Links)");
-                Console.WriteLine("18. Merging 2 lists in 1 list");
+                Console.WriteLine("1. Create list");
+                Console.WriteLine("2. Display list");
+                Console.WriteLine("3. Insert Node (At start/end/specific position/before or afer specific node)");
+                Console.WriteLine("4. Search for an element");
+                Console.WriteLine("5. Update a node value");
+                Console.WriteLine("6. Delete a node ");
+                Console.WriteLine("7. Reverse list");
+                Console.WriteLine("8. Sorting list (Exchanging Data/Links)");
+                Console.WriteLine("9. Merging 2 lists in 1 list");
 
                 Console.WriteLine("\nGeeksForGeeks problems:");
-                Console.WriteLine("110. Middle of list");
-                Console.WriteLine("111. Check if List is circular");
+                Console.WriteLine("11. Middle of list");
+                Console.WriteLine("12. Check if List is circular");
 
-                Console.WriteLine("\n19. EXIT !!!");
-                Console.Write("\nSelect sub-option in LinkedList:");
+                Console.WriteLine("\n0. EXIT !!!");
+                Console.Write("\nSelect sub-option in LinkedList: ");
 
                 int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
                 Console.WriteLine("");
@@ -56,7 +56,7 @@ namespace DSA.LinkedLists
                     case LinkedList_Options.GeeksForGeeks0:     ll.MiddleOfList();  break;
                     case LinkedList_Options.GeeksForGeeks1:     ll.CheckIfCircularList(); break;
                     case LinkedList_Options.EXIT:
-                        Console.WriteLine("You selected 9. Exiting...");
+                        Console.WriteLine("You selected 0. Exiting...");
                         break;
                     default:
                         Console.WriteLine("!!! Wrong input selection !!!\n");
