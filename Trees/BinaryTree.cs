@@ -9,7 +9,7 @@ namespace DSA
             public Node? Root = null;
 
             #region Basic Binary Tree Operations
-            public void Create_Tree_1()
+            public void Create_Tree_1()  //Level order - P Q R A B X
             {
                 Root = new Node('P');
                 Root.lChild = new Node('Q');
@@ -50,6 +50,21 @@ namespace DSA
 
                 Root.rChild.rChild.rChild.rChild = new Node('F');
             }
+            public void Display_NEW ()
+            {
+                Display_NEW(Root, 0);
+                Console.WriteLine();
+            }
+            
+            //TODO - display tree like pyramid as expected in hard copies
+
+            private void Display_NEW(Node? t, int level)
+            {
+                for (int i = 0; i < level; i++)
+                    Console.WriteLine("  ");
+
+            }
+
             public void Display()
             {
                 Display(Root, 0);
