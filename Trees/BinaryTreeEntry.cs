@@ -28,7 +28,7 @@ namespace Trees
                 Console.WriteLine("6. InOrder Traversal");
                 Console.WriteLine("7. PostOrder raversal");
 
-                Console.WriteLine("\0. EXIT !!!");
+                Console.WriteLine("\n0. EXIT !!!");
                 Console.Write("\nSelect sub-option in Tree:");
 
                 int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
@@ -40,13 +40,13 @@ namespace Trees
 
                 switch (selectedSubOption)
                 {
-                    case BinaryTree_Operations.Create_Tree_1: bt.Create_Tree_1(); break;
-                    case BinaryTree_Operations.Create_Tree_2: bt.Create_Tree_2(); break;
-                    case BinaryTree_Operations.Create_Tree_3: bt.Create_Tree_3(); break;
-                    case BinaryTree_Operations.Display: bt.Display(); break;
-                    case BinaryTree_Operations.PreOrderTraversal: bt.PreOrder(); break;
-                    case BinaryTree_Operations.InOrderTraversal: bt.InOrder(); break;
-                    case BinaryTree_Operations.PostOrderTraversal: bt.PostOrder(); break;
+                    case BinaryTree_Operations.Create_Tree_1:           bt.Create_Tree_1(); break;
+                    case BinaryTree_Operations.Create_Tree_2:           bt.Create_Tree_2(); break;
+                    case BinaryTree_Operations.Create_Tree_3:           bt.Create_Tree_3(); break;
+                    case BinaryTree_Operations.Display:                 bt.Display();       break;
+                    case BinaryTree_Operations.PreOrderTraversal:       bt.PreOrder();      break;
+                    case BinaryTree_Operations.InOrderTraversal:        bt.InOrder();       break;
+                    case BinaryTree_Operations.PostOrderTraversal:      bt.PostOrder();     break;
 
                     case BinaryTree_Operations.EXIT:
                         Console.WriteLine("You selected 0. Exiting...");

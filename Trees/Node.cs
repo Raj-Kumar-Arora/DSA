@@ -3,9 +3,9 @@
     public class Node
     {
         public Node? lChild;
-        public char data;
+        public int data;
         public Node? rChild;
-        public Node(char d)
+        public Node(int d)
         {
             data = d;
             lChild = rChild = null;
