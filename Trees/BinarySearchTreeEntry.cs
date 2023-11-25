@@ -15,10 +15,6 @@ namespace Trees
 
             do
             {
-                Console.WriteLine(Constants.STR_LINE_SEPERATOR);
-                Console.WriteLine("\nTODO - 1. Support Create_Tree_2    2. display impl like pyramid 1999");
-                Console.WriteLine(Constants.STR_LINE_SEPERATOR);
-
                 Console.WriteLine("\nSupported sub-options in Binary Search Tree:");
                 Console.WriteLine("1. Create Tree - 1 (Level order - P Q R A B X)");
                 Console.WriteLine("2. Create Tree - 2 (Level order - 70 40 80 35 50 75 89 30 37 55 82 93)");

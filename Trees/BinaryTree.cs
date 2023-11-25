@@ -6,53 +6,55 @@ namespace DSA
     {
         public class BinaryTree
         {
-            public Node? Root = null;
+            #region public properties
+            public Node? root { get; set;} = null;
+            #endregion public properties
 
-            #region Basic Binary Tree Operations
+            #region public methods - Basic Binary Tree Operations
             public void Create_Tree_1()  //Level order - P Q R A B X
             {
-                Root = new Node('P');
-                Root.lChild = new Node('Q');
-                Root.rChild = new Node('R');
-                Root.lChild.lChild = new Node('A');
-                Root.lChild.rChild = new Node('B');
-                Root.rChild.lChild = new Node('X');
+                root = new Node('P');
+                root.left = new Node('Q');
+                root.right = new Node('R');
+                root.left.left = new Node('A');
+                root.left.right = new Node('B');
+                root.right.left = new Node('X');
             }
             public void Create_Tree_2()
             {
-                Root = new Node('P');
-                Root.lChild = new Node('Q');
-                Root.rChild = new Node('R');
-                Root.lChild.lChild = new Node('A');
-                Root.lChild.rChild = new Node('B');
-                Root.rChild.lChild = new Node('X');
+                root = new Node('P');
+                root.left = new Node('Q');
+                root.right = new Node('R');
+                root.left.left = new Node('A');
+                root.left.right = new Node('B');
+                root.right.left = new Node('X');
             }
             public void Create_Tree_3()  //Level order - A B G C D H I E J F J L K F
             {
-                Root = new Node('A');
-                Root.lChild = new Node('B');
-                Root.rChild = new Node('G');
+                root = new Node('A');
+                root.left = new Node('B');
+                root.right = new Node('G');
                 
-                Root.lChild.lChild = new Node('C');
-                Root.lChild.lChild.lChild = new Node('E');
+                root.left.left = new Node('C');
+                root.left.left.left = new Node('E');
 
-                Root.lChild.rChild = new Node('D');
-                Root.lChild.rChild.lChild = new Node('J');
-                Root.lChild.rChild.rChild = new Node('F');
+                root.left.right = new Node('D');
+                root.left.right.left = new Node('J');
+                root.left.right.right = new Node('F');
 
 
-                Root.rChild.lChild = new Node('H');
-                Root.rChild.lChild.lChild = new Node('J');
+                root.right.left = new Node('H');
+                root.right.left.left = new Node('J');
 
-                Root.rChild.rChild = new Node('I');
-                Root.rChild.rChild.lChild = new Node('L');
-                Root.rChild.rChild.rChild = new Node('K');
+                root.right.right = new Node('I');
+                root.right.right.left = new Node('L');
+                root.right.right.right = new Node('K');
 
-                Root.rChild.rChild.rChild.rChild = new Node('F');
+                root.right.right.right.right = new Node('F');
             }
             public void Display_NEW ()
             {
-                Display_NEW(Root, 0);
+                Display_NEW(root, 0);
                 Console.WriteLine();
             }
             
@@ -67,7 +69,7 @@ namespace DSA
 
             public void Display()
             {
-                Display(Root, 0);
+                Display(root, 0);
                 Console.WriteLine();
             }
             private void Display(Node? t, int level)
@@ -77,7 +79,7 @@ namespace DSA
                 if (t == null)  
                     return; 
 
-                Display(t.rChild, level + 1);
+                Display(t.right, level + 1);
                 Console.WriteLine();
 
                 for (i = 0; i < level; i++)
@@ -86,14 +88,14 @@ namespace DSA
                 }
                 Console.Write(t.data);
 
-                Display(t.lChild, level + 1);
+                Display(t.left, level + 1);
 
                 //Console.WriteLine(Constants.STR_LINE_SEPERATOR);
             }
 
             public void PreOrder ()
             {
-                PreOrder(Root);
+                PreOrder(root);
                 Console.WriteLine();
             }
             private void PreOrder (Node? t)
@@ -102,13 +104,13 @@ namespace DSA
                     return;
 
                 Console.Write("  " + t.data);
-                PreOrder(t.lChild);
-                PreOrder(t.rChild);
+                PreOrder(t.left);
+                PreOrder(t.right);
             }
 
             public void InOrder()
             {
-                InOrder(Root);
+                InOrder(root);
                 Console.WriteLine();
             }
             private void InOrder(Node? t)
@@ -116,14 +118,14 @@ namespace DSA
                 if (t == null)
                     return;
 
-                InOrder(t.lChild);
+                InOrder(t.left);
                 Console.Write("  " + t.data);
-                InOrder(t.rChild);
+                InOrder(t.right);
             }
 
             public void PostOrder()
             {
-                PostOrder(Root);
+                PostOrder(root);
                 Console.WriteLine();
             }
             private void PostOrder(Node? t)
@@ -131,11 +133,11 @@ namespace DSA
                 if (t == null)
                     return;
 
-                PostOrder(t.lChild);
-                PostOrder(t.rChild);
+                PostOrder(t.left);
+                PostOrder(t.right);
                 Console.Write("  " + t.data);
             }
-            #endregion Basic Binary Tree operations
+            #endregion public methods - Basic Binary Tree operations
         }
     }
 }

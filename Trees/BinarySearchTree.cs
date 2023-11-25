@@ -6,7 +6,7 @@ namespace DSA
     {
         public class BinarySearchTree : BinaryTree
         {
-            public Node? Root = null;
+            //public Node? Root = null;
 
             #region Basic Binary Search Tree Operations
             public void Insert ()
