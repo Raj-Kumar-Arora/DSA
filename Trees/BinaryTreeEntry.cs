@@ -10,7 +10,6 @@ namespace Trees
         {
             int selectedSubOptionInt = -1;
             BinaryTree_Operations selectedSubOption;
-            //TODO - add option to create BinaryTree/BST/etc. based on user selection
             BinaryTree bt = new();
 
             do
@@ -22,10 +21,12 @@ namespace Trees
                 Console.WriteLine("4. Display current Tree");
                 Console.WriteLine("5. PreOrder Traversal");
                 Console.WriteLine("6. InOrder Traversal");
-                Console.WriteLine("7. PostOrder raversal");
-
+                Console.WriteLine("7. PostOrder Traversal");
+                Console.WriteLine("8. LevelOrder Traversal");
+                Console.WriteLine("9. Height Of Tree");
+                
                 Console.WriteLine("\n0. EXIT !!!");
-                Console.Write("\nSelect sub-option in Tree:");
+                Console.Write("\nSelect sub-option in Tree: ");
 
                 int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
                 Console.WriteLine("");
@@ -43,6 +44,8 @@ namespace Trees
                     case BinaryTree_Operations.PreOrderTraversal:       bt.PreOrder();      break;
                     case BinaryTree_Operations.InOrderTraversal:        bt.InOrder();       break;
                     case BinaryTree_Operations.PostOrderTraversal:      bt.PostOrder();     break;
+                    case BinaryTree_Operations.LevelOrder:              bt.LevelOrder();    break;
+                    case BinaryTree_Operations.HeightOfTree:            bt.Height();        break;
 
                     case BinaryTree_Operations.EXIT:
                         Console.WriteLine("You selected 0. Exiting...");

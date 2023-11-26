@@ -10,7 +10,6 @@ namespace Trees
         {
             int selectedSubOptionInt = -1;
             BinarySearchTree_Operations selectedSubOption;
-            //TODO - add option to create BinaryTree/BST/etc. based on user selection
             BinarySearchTree bst = new();
 
             do
@@ -22,15 +21,17 @@ namespace Trees
                 Console.WriteLine("4. Display current Tree");
                 Console.WriteLine("5. PreOrder Traversal");
                 Console.WriteLine("6. InOrder Traversal");
-                Console.WriteLine("7. PostOrder raversal");
-                Console.WriteLine("8. Insert");
-                Console.WriteLine("9. Search");
-                Console.WriteLine("10. Min");
-                Console.WriteLine("11. Max");
+                Console.WriteLine("7. PostOrder Traversal");
+                Console.WriteLine("8. LevelOrder Traversal");
+                Console.WriteLine("9. Insert");
+                Console.WriteLine("10. Search");
+                Console.WriteLine("11. Min");
+                Console.WriteLine("12. Max");
+                Console.WriteLine("13. Height Of Tree");
 
                 Console.WriteLine("\n0. EXIT !!!");
 
-                Console.Write("\nSelect sub-option in Tree:");
+                Console.Write("\nSelect sub-option in Tree: ");
 
                 int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
                 Console.WriteLine("");
@@ -48,10 +49,12 @@ namespace Trees
                     case BinarySearchTree_Operations.PreOrderTraversal:     bst.PreOrder();      break;
                     case BinarySearchTree_Operations.InOrderTraversal:      bst.InOrder();       break;
                     case BinarySearchTree_Operations.PostOrderTraversal:    bst.PostOrder();     break;
+                    case BinarySearchTree_Operations.LevelOrder:            bst.LevelOrder();    break;
                     case BinarySearchTree_Operations.Insert:                bst.Insert();        break;
                     case BinarySearchTree_Operations.Search:                bst.Search();        break;
                     case BinarySearchTree_Operations.Min:                   bst.Min();           break;
                     case BinarySearchTree_Operations.Max:                   bst.Max();           break;
+                    case BinarySearchTree_Operations.HeightOfTree:          bst.Height();        break;
 
                     case BinarySearchTree_Operations.EXIT:
                         Console.WriteLine("You selected 9. Exiting...");

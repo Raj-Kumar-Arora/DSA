@@ -1,4 +1,5 @@
 ﻿using DSA.Common;
+using System.Reflection.Emit;
 
 namespace DSA
 {
@@ -20,14 +21,24 @@ namespace DSA
                 root.left.right = new Node('B');
                 root.right.left = new Node('X');
             }
-            public void Create_Tree_2()
+            public void Create_Tree_2()  //Level order - 70 40 80 35 50 75 89 30 37 55 82 93
             {
-                root = new Node('P');
-                root.left = new Node('Q');
-                root.right = new Node('R');
-                root.left.left = new Node('A');
-                root.left.right = new Node('B');
-                root.right.left = new Node('X');
+                root = new Node()
+                {
+                    data = 70,
+                    left = new Node()
+                    {
+                        data = 40,
+                        left = new Node(35, new(30), new(37)),
+                        right = new Node(50, null, new(55))
+                    },
+                    right = new Node()
+                    {
+                        data = 80,
+                        left = new Node(75),
+                        right = new Node(89, new(82), new(93))
+                    }
+                };
             }
             public void Create_Tree_3()  //Level order - A B G C D H I E J F J L K F
             {
@@ -52,29 +63,19 @@ namespace DSA
 
                 root.right.right.right.right = new Node('F');
             }
-            public void Display_NEW ()
-            {
-                Display_NEW(root, 0);
-                Console.WriteLine();
-            }
-            
-            //TODO - display tree like pyramid as expected in hard copies
-
-            private void Display_NEW(Node? t, int level)
-            {
-                for (int i = 0; i < level; i++)
-                    Console.WriteLine("  ");
-
-            }
 
             public void Display()
             {
+                if (root == null)
+                {
+                    Console.WriteLine("The tree is empty.");
+                    return;
+                }
                 Display(root, 0);
                 Console.WriteLine();
             }
             private void Display(Node? t, int level)
             {
-                //Console.Write(" |  ");
                 int i;
                 if (t == null)  
                     return; 
@@ -95,6 +96,7 @@ namespace DSA
 
             public void PreOrder ()
             {
+                Console.WriteLine("PreOrder:");
                 PreOrder(root);
                 Console.WriteLine();
             }
@@ -110,6 +112,7 @@ namespace DSA
 
             public void InOrder()
             {
+                Console.WriteLine("InOrder:");
                 InOrder(root);
                 Console.WriteLine();
             }
@@ -125,6 +128,7 @@ namespace DSA
 
             public void PostOrder()
             {
+                Console.WriteLine("PostOrder:");
                 PostOrder(root);
                 Console.WriteLine();
             }
@@ -136,6 +140,49 @@ namespace DSA
                 PostOrder(t.left);
                 PostOrder(t.right);
                 Console.Write("  " + t.data);
+            }
+
+            public void LevelOrder()
+            {
+                Console.WriteLine("Level Order:");
+                Queue<Node?> qu = new();
+                qu.Enqueue(root);
+
+                while (qu.Count > 0)
+                {
+                    Node? t = qu.Dequeue();
+                    Console.WriteLine(t.data);
+                    if (t.left != null) qu.Enqueue(t.left);
+                    if (t.right != null) qu.Enqueue(t.right);
+                }
+                Console.WriteLine();
+            }
+
+            public void Height()
+            {
+                if (root == null)
+                {
+                    Console.WriteLine("The tree is empty.");
+                    return;
+                }
+                int h = Height(root);
+                Console.WriteLine("Height of tree : " + h);
+            }
+            private int Height(Node? t)
+            {
+                //int lh, rh = 0;
+
+                int lh = t?.left == null ? 0 : Height(t.left);
+                int rh = t?.right == null ? 0 : Height(t.right);
+                //if (t?.left == null) 
+                //    lh = 1;
+                //else lh = Height(t.left);
+
+                //if (t?.right == null)
+                //    lh = 1;
+                //else lh = Height(t.right);
+
+                return lh>rh ? (lh+1) : (rh+1);
             }
             #endregion public methods - Basic Binary Tree operations
         }
