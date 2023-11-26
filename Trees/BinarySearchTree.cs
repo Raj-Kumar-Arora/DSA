@@ -1,6 +1,4 @@
-﻿using DSA.Common;
-
-namespace DSA
+﻿namespace DSA
 {
     namespace Trees
     {
@@ -50,19 +48,60 @@ namespace DSA
             }
             public void Search ()
             {
-                Console.WriteLine(Constants.STR_TO_BE_IMPLEMENTED);
+                if (IsTreeEmpty() == true) return;
+
+                Console.Write("Enter value of Node's data to search: ");
+                int data;
+                if (int.TryParse(Console.ReadLine(), out data) == false)
+                {
+                    Console.WriteLine("Please enter a valid integer no.");
+                    return;
+                }
+
+                Node? t = root;
+                while (t != null) 
+                {
+                    if (data < t.data)
+                        t = t.left;
+                    else if (data > t.data)
+                        t = t.right;
+                    else if (data == t.data)
+                    {
+                        Console.WriteLine("FOUND!!! Searched node is present in tree.");
+                        break;
+                    }
+                }
+
+                if (t == null)
+                    Console.WriteLine("NOT FOUND!!!  Searched node is NOT present in tree.");
             }
-            public void Insert(int d)
+            public void Delete()
             {
-                Console.WriteLine(Constants.STR_TO_BE_IMPLEMENTED);
+                if (IsTreeEmpty() == true) return;
+
+                Console.WriteLine(Common.Constants.STR_TO_BE_IMPLEMENTED);
             }
             public void Min ()
             {
-                Console.WriteLine(Constants.STR_TO_BE_IMPLEMENTED);
+                // in BST, the left most leaft child is min
+                if (IsTreeEmpty() == true) return;
+
+                Node? t = root;
+                while (t?.left != null)
+                    t = t.left;
+
+                Console.WriteLine("Min value of data : " + t?.data);
             }
             public void Max()
             {
-                Console.WriteLine(Common.Constants.STR_TO_BE_IMPLEMENTED);
+                // in BST, the right most leaft child is min
+                if (IsTreeEmpty() == true) return;
+
+                Node? t = root;
+                while (t?.right != null)
+                    t = t.right;
+
+                Console.WriteLine("Min value of data : " + t?.data);
             }
             #endregion Basic Binary Search Tree operations
         }

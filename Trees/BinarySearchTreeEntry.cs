@@ -1,6 +1,5 @@
 ﻿using DSA.Trees.Enums;
 using DSA.Trees;
-using DSA.Common;
 
 namespace Trees
 {
@@ -23,11 +22,12 @@ namespace Trees
                 Console.WriteLine("6. InOrder Traversal");
                 Console.WriteLine("7. PostOrder Traversal");
                 Console.WriteLine("8. LevelOrder Traversal");
-                Console.WriteLine("9. Insert");
-                Console.WriteLine("10. Search");
-                Console.WriteLine("11. Min");
-                Console.WriteLine("12. Max");
-                Console.WriteLine("13. Height Of Tree");
+                Console.WriteLine("9. Insert a new node in tree");
+                Console.WriteLine("10. Searching of a node in tree");
+                Console.WriteLine("11. Delete a new node from tree");
+                Console.WriteLine("12. Min");
+                Console.WriteLine("13. Max");
+                Console.WriteLine("14. Height Of Tree");
 
                 Console.WriteLine("\n0. EXIT !!!");
 
@@ -52,6 +52,7 @@ namespace Trees
                     case BinarySearchTree_Operations.LevelOrder:            bst.LevelOrder();    break;
                     case BinarySearchTree_Operations.Insert:                bst.Insert();        break;
                     case BinarySearchTree_Operations.Search:                bst.Search();        break;
+                    case BinarySearchTree_Operations.Delete:                bst.Delete();        break;
                     case BinarySearchTree_Operations.Min:                   bst.Min();           break;
                     case BinarySearchTree_Operations.Max:                   bst.Max();           break;
                     case BinarySearchTree_Operations.HeightOfTree:          bst.Height();        break;
@@ -63,6 +64,8 @@ namespace Trees
                         Console.WriteLine("!!! Wrong input selection !!!\n");
                         break;
                 }
+                //Console.WriteLine(Constants.STR_ENTER_KEY_TO_CONTINUE);
+                //Console.ReadKey();
             } while (selectedSubOption != BinarySearchTree_Operations.EXIT);
         }
     }

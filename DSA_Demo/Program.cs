@@ -55,6 +55,8 @@ internal class Program
                         break;
                 }
             }
+            //Console.WriteLine(Constants.STR_ENTER_KEY_TO_CONTINUE);
+            //Console.ReadKey();
         } while (selectedOption != DSA_Options.EXIT);
     }
 }

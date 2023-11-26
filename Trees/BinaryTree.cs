@@ -66,11 +66,8 @@ namespace DSA
 
             public void Display()
             {
-                if (root == null)
-                {
-                    Console.WriteLine("The tree is empty.");
-                    return;
-                }
+                if (IsTreeEmpty() == true) return;
+
                 Display(root, 0);
                 Console.WriteLine();
             }
@@ -160,11 +157,8 @@ namespace DSA
 
             public void Height()
             {
-                if (root == null)
-                {
-                    Console.WriteLine("The tree is empty.");
-                    return;
-                }
+                if (IsTreeEmpty() == true) return;
+
                 int h = Height(root);
                 Console.WriteLine("Height of tree : " + h);
             }
@@ -183,6 +177,16 @@ namespace DSA
                 //else lh = Height(t.right);
 
                 return lh>rh ? (lh+1) : (rh+1);
+            }
+
+            protected bool IsTreeEmpty()
+            {
+                if (root == null)
+                {
+                    Console.WriteLine("The tree is empty.");
+                    return true;
+                }
+                else return false;
             }
             #endregion public methods - Basic Binary Tree operations
         }

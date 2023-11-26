@@ -24,7 +24,8 @@ namespace Trees
                 Console.WriteLine("7. PostOrder Traversal");
                 Console.WriteLine("8. LevelOrder Traversal");
                 Console.WriteLine("9. Height Of Tree");
-                
+                Console.WriteLine("10. Searching of a node in Tree");
+
                 Console.WriteLine("\n0. EXIT !!!");
                 Console.Write("\nSelect sub-option in Tree: ");
 
@@ -54,6 +55,8 @@ namespace Trees
                         Console.WriteLine("!!! Wrong input selection !!!\n");
                         break;
                 }
+                //Console.WriteLine(Constants.STR_ENTER_KEY_TO_CONTINUE);
+                //Console.ReadKey();
             } while (selectedSubOption != BinaryTree_Operations.EXIT);
         }
     }
