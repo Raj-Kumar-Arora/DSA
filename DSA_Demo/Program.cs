@@ -17,12 +17,12 @@ internal class Program
         do
         {
             Console.WriteLine("Select an option:");
-            Console.WriteLine("1. LinkedList");
+            Console.WriteLine("1. LinkedList (Singly LL, Doubly LL, Circular LL)");
             Console.WriteLine("2. Arrays");
             Console.WriteLine("3. Strings");
             Console.WriteLine("4. Stacks");
             Console.WriteLine("5. Queues");
-            Console.WriteLine("6. Trees");
+            Console.WriteLine("6. Trees (Binary Tree, Binary Search Tree, Heap)");
             Console.WriteLine("7. Graphs");
             Console.WriteLine("0. EXIT !!!");
             if (int.TryParse(Console.ReadLine(), out selectedOptionInt) == false)

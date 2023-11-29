@@ -148,7 +148,7 @@ namespace DSA
                 while (qu.Count > 0)
                 {
                     Node? t = qu.Dequeue();
-                    Console.WriteLine(t.data);
+                    Console.Write("   " + t.data);
                     if (t.left != null) qu.Enqueue(t.left);
                     if (t.right != null) qu.Enqueue(t.right);
                 }

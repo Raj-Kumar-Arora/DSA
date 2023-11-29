@@ -14,8 +14,8 @@ namespace Trees
             do
             {
                 Console.WriteLine("\nSupported sub-options in Binary Search Tree:");
-                Console.WriteLine("1. Create Tree - 1 (Level order - P Q R A B X)");
-                Console.WriteLine("2. Create Tree - 2 (Level order - 70 40 80 35 50 75 89 30 37 55 82 93)");
+                Console.WriteLine("1. Create Tree - 1 (Level order - A B P Q R X)");
+                Console.WriteLine("2. Create Tree - 2 (Level order - 45 39 60 23 42 55 79 10 34 44 57 77 83 29 69)");
                 Console.WriteLine("3. Create Tree - 3 (Level order - A B G C D H I E J F J L K F)");
                 Console.WriteLine("4. Display current Tree");
                 Console.WriteLine("5. PreOrder Traversal");
