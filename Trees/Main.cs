@@ -15,6 +15,7 @@ namespace DSA.Trees
                 Console.WriteLine("\nSupported sub-options in Tree:");
                 Console.WriteLine("1. Binary Tree");
                 Console.WriteLine("2. Binary Search Tree");
+                Console.WriteLine("3. Heap Tree");
 
                 Console.WriteLine("\n0. EXIT !!!");
                 Console.Write("\nSelect sub-option in Tree: ");
@@ -33,6 +34,7 @@ namespace DSA.Trees
                 {
                     case Tree_Options.BinaryTree:       BinaryTreeEntry.Start();        break;
                     case Tree_Options.BinarySearchTree: BinarySearchTreeEntry.Start();  break;
+                    case Tree_Options.Heap:             HeapEntry.Start();              break;
 
                     case Tree_Options.EXIT:
                         Console.WriteLine("You selected 0. Exiting...");

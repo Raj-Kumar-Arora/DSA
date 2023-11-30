@@ -58,7 +58,7 @@ namespace Trees
                     case BinarySearchTree_Operations.HeightOfTree:          bst.Height();        break;
 
                     case BinarySearchTree_Operations.EXIT:
-                        Console.WriteLine("You selected 9. Exiting...");
+                        Console.WriteLine("You selected 0. Exiting...");
                         break;
                     default:
                         Console.WriteLine("!!! Wrong input selection !!!\n");

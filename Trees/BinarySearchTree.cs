@@ -89,6 +89,7 @@
                     }
                 };
             }
+
             #region Basic Binary Search Tree Operations
             public void Insert ()
             {
@@ -222,7 +223,7 @@
 
                         //Inorder successor of Node t = left most child of right subtree of t
                         Node? t1 = t?.right, t1Parent = t;
-                        while(t1.left != null)
+                        while(t1?.left != null)
                         {
                             t1Parent = t1;
                             t1 = t1.left;
