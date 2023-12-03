@@ -1,8 +1,6 @@
 ﻿using DSA.Graphs.Enums;
-using Graphs;
-using Graphs.AdjacencyList;
-using Graphs.DirectedGraph_AdjacencyMatrix;
-using System.Diagnostics;
+using Graphs.DirectedGraphAdjacencyMatrix;
+using Graphs.DirectedGraphAdjacencyList;
 
 namespace DSA.Graphs
 {
@@ -34,8 +32,8 @@ namespace DSA.Graphs
 
                 switch (selectedSubOption)
                 {
-                    case GraphOptions.DirectedGraphUsingAdjacencyMatrix: GraphAdjacencyMatrixEntry.Start(); break;
-                    case GraphOptions.DirectedGraphUsingAdjacencyList:   GraphAdjacencyListEntry.Start();   break;
+                    case GraphOptions.DirectedGraphUsingAdjacencyMatrix:    GraphAdjacencyMatrixEntry.Start();   break;
+                    case GraphOptions.DirectedGraphUsingAdjacencyList:      GraphAdjacencyListEntry.Start();   break;
 
                     case GraphOptions.EXIT:
                         Console.WriteLine("You selected 0. Exiting...");

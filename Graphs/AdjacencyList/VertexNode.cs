@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Graphs.AdjacencyList
+﻿namespace Graphs.AdjacencyList
 {
-    internal class VertexNode
+    class VertexNode
     {
+        public string Name { get; set; }
+        public VertexNode? NextVertex { get; set; }
+        public EdgeNode? FirstEdge { get; set; }
+        public VertexNode(string name) 
+        { 
+            Name = name;
+        }
     }
 }

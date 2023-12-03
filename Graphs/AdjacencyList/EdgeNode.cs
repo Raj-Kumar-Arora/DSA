@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Graphs.AdjacencyList
 {
-    internal class EdgeNode
+    class EdgeNode
     {
+        public VertexNode? EndVertex { get; set; }
+        public EdgeNode? NextEdge { get; set; }
+
+        public EdgeNode(VertexNode vertex)
+        {
+            EndVertex = vertex;
+        }
     }
 }

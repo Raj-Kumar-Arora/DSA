@@ -1,13 +1,13 @@
 ﻿using DSA.Graphs.Enums;
 
-namespace Graphs.DirectedGraph_AdjacencyMatrix
+namespace Graphs.DirectedGraphAdjacencyMatrix
 {
     internal class GraphAdjacencyMatrixEntry
     {
         public static void Start()
         {
             int selectedSubOptionInt = -1;
-            DirectedGraphOperations selectedSubOption;
+            DirectedGraphAdjMatrixOperations selectedSubOption;
 
             //TODO - add option to create LinkedList/Circular LL/DoublyLL based on user selection
             DirectedGraph graph = new();
@@ -28,7 +28,7 @@ namespace Graphs.DirectedGraph_AdjacencyMatrix
                 int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
                 Console.WriteLine("");
 
-                selectedSubOption = (DirectedGraphOperations)selectedSubOptionInt;
+                selectedSubOption = (DirectedGraphAdjMatrixOperations)selectedSubOptionInt;
                 Console.WriteLine("Selected sub-option: " + selectedSubOption.ToString() + "\n");
                 Console.WriteLine(DSA.Common.Constants.STR_LINE_SEPERATOR);
 
@@ -37,21 +37,21 @@ namespace Graphs.DirectedGraph_AdjacencyMatrix
 
                 switch (selectedSubOption)
                 {
-                    case DirectedGraphOperations.DisplayAdjMatrix: graph.DisplayGraphInfo(); break;
-                    case DirectedGraphOperations.InsertVertex: graph.InsertVertex(); break;
-                    case DirectedGraphOperations.InsertEdge: graph.InsertEdge(); break;
-                    case DirectedGraphOperations.DeleteEdge: graph.DeleteEdge(); break;
-                    case DirectedGraphOperations.DisplayIndegreeOutDegree: graph.DisplayIndegreeOutDegree(); break;
-                    case DirectedGraphOperations.CheckIfEdgeExists: graph.EdgeExists(); break;
+                    case DirectedGraphAdjMatrixOperations.DisplayAdjMatrix: graph.DisplayGraphInfo(); break;
+                    case DirectedGraphAdjMatrixOperations.InsertVertex: graph.InsertVertex(); break;
+                    case DirectedGraphAdjMatrixOperations.InsertEdge: graph.InsertEdge(); break;
+                    case DirectedGraphAdjMatrixOperations.DeleteEdge: graph.DeleteEdge(); break;
+                    case DirectedGraphAdjMatrixOperations.DisplayIndegreeOutDegree: graph.DisplayIndegreeOutDegree(); break;
+                    case DirectedGraphAdjMatrixOperations.CheckIfEdgeExists: graph.EdgeExists(); break;
 
-                    case DirectedGraphOperations.EXIT:
+                    case DirectedGraphAdjMatrixOperations.EXIT:
                         Console.WriteLine("You selected 0. Exiting...");
                         break;
                     default:
                         Console.WriteLine("!!! Wrong input selection !!!\n");
                         break;
                 }
-            } while (selectedSubOption != DirectedGraphOperations.EXIT);
+            } while (selectedSubOption != DirectedGraphAdjMatrixOperations.EXIT);
         }
     }
 }
