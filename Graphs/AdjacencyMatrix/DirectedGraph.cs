@@ -53,6 +53,14 @@
         }
         private void InsertVertex(string? name)
         {
+            int vIndex = GetIndex(new Vertex(name));
+
+            //TODO : validation 
+            if (vIndex != -1)
+            {
+                Console.WriteLine("This vertex already exists");
+                return;
+            }
             vertexList[noOfVertices++] = new Vertex(name);
         }
 
@@ -106,8 +114,8 @@
             int v2Index = GetIndex(v2);
 
             //TODO : validation 
-            //if ((v1Index == -1) || (v2Index = -1)
-            //    throw new System.InvalidOperationException("Invalid vertex");
+            if ((v1Index == -1) || (v2Index == -1))
+                throw new System.InvalidOperationException("Invalid vertex");
             if (v1Index == v2Index)
                 throw new System.InvalidOperationException("Not a valid edge.");
 

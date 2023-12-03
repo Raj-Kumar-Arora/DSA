@@ -4,7 +4,7 @@
     {
         enum GraphOptions
         {
-            DirectedGraph = 1, 
+            DirectedGraphUsingAdjacencyMatrix = 1, DirectedGraphUsingAdjacencyList,
             EXIT = 0
         }
         enum DirectedGraphOperations
