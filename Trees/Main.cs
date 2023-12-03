@@ -8,7 +8,7 @@ namespace DSA.Trees
         public static void Start()
         {
             int selectedSubOptionInt = -1;
-            Tree_Options selectedSubOption;
+            TreeOptions selectedSubOption;
             
             do
             {
@@ -23,7 +23,7 @@ namespace DSA.Trees
                 int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
                 Console.WriteLine("");
 
-                selectedSubOption = (Tree_Options)selectedSubOptionInt;
+                selectedSubOption = (TreeOptions)selectedSubOptionInt;
                 Console.WriteLine("Selected sub-option: " + selectedSubOption.ToString() + "\n");
                 Console.WriteLine(Common.Constants.STR_LINE_SEPERATOR);
 
@@ -32,18 +32,18 @@ namespace DSA.Trees
 
                 switch (selectedSubOption)
                 {
-                    case Tree_Options.BinaryTree:       BinaryTreeEntry.Start();        break;
-                    case Tree_Options.BinarySearchTree: BinarySearchTreeEntry.Start();  break;
-                    case Tree_Options.Heap:             HeapEntry.Start();              break;
+                    case TreeOptions.BinaryTree:       BinaryTreeEntry.Start();        break;
+                    case TreeOptions.BinarySearchTree: BinarySearchTreeEntry.Start();  break;
+                    case TreeOptions.Heap:             HeapEntry.Start();              break;
 
-                    case Tree_Options.EXIT:
+                    case TreeOptions.EXIT:
                         Console.WriteLine("You selected 0. Exiting...");
                         break;
                     default:
                         Console.WriteLine("!!! Wrong input selection !!!\n");
                         break;
                 }
-            } while (selectedSubOption != Tree_Options.EXIT);
+            } while (selectedSubOption != TreeOptions.EXIT);
         }
     }
 }

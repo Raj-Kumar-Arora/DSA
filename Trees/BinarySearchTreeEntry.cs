@@ -8,7 +8,7 @@ namespace Trees
         public static void Start()
         {
             int selectedSubOptionInt = -1;
-            BinarySearchTree_Operations selectedSubOption;
+            BinarySearchTreeOperations selectedSubOption;
             BinarySearchTree bst = new();
 
             do
@@ -36,28 +36,28 @@ namespace Trees
                 int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
                 Console.WriteLine("");
 
-                selectedSubOption = (BinarySearchTree_Operations)selectedSubOptionInt;
+                selectedSubOption = (BinarySearchTreeOperations)selectedSubOptionInt;
                 Console.WriteLine("Selected sub-option: " + selectedSubOption.ToString() + "\n");
                 Console.WriteLine(DSA.Common.Constants.STR_LINE_SEPERATOR);
 
                 switch (selectedSubOption)
                 {
-                    case BinarySearchTree_Operations.Create_Tree_1:         bst.Create_Tree_1(); break;
-                    case BinarySearchTree_Operations.Create_Tree_2:         bst.Create_Tree_2(); break;
-                    case BinarySearchTree_Operations.Create_Tree_3:         bst.Create_Tree_3(); break;
-                    case BinarySearchTree_Operations.Display:               bst.Display();       break;
-                    case BinarySearchTree_Operations.PreOrderTraversal:     bst.PreOrder();      break;
-                    case BinarySearchTree_Operations.InOrderTraversal:      bst.InOrder();       break;
-                    case BinarySearchTree_Operations.PostOrderTraversal:    bst.PostOrder();     break;
-                    case BinarySearchTree_Operations.LevelOrder:            bst.LevelOrder();    break;
-                    case BinarySearchTree_Operations.Insert:                bst.Insert();        break;
-                    case BinarySearchTree_Operations.Search:                bst.Search();        break;
-                    case BinarySearchTree_Operations.Delete:                bst.Delete();        break;
-                    case BinarySearchTree_Operations.Min:                   bst.Min();           break;
-                    case BinarySearchTree_Operations.Max:                   bst.Max();           break;
-                    case BinarySearchTree_Operations.HeightOfTree:          bst.Height();        break;
+                    case BinarySearchTreeOperations.Create_Tree_1:         bst.Create_Tree_1(); break;
+                    case BinarySearchTreeOperations.Create_Tree_2:         bst.Create_Tree_2(); break;
+                    case BinarySearchTreeOperations.Create_Tree_3:         bst.Create_Tree_3(); break;
+                    case BinarySearchTreeOperations.Display:               bst.Display();       break;
+                    case BinarySearchTreeOperations.PreOrderTraversal:     bst.PreOrder();      break;
+                    case BinarySearchTreeOperations.InOrderTraversal:      bst.InOrder();       break;
+                    case BinarySearchTreeOperations.PostOrderTraversal:    bst.PostOrder();     break;
+                    case BinarySearchTreeOperations.LevelOrder:            bst.LevelOrder();    break;
+                    case BinarySearchTreeOperations.Insert:                bst.Insert();        break;
+                    case BinarySearchTreeOperations.Search:                bst.Search();        break;
+                    case BinarySearchTreeOperations.Delete:                bst.Delete();        break;
+                    case BinarySearchTreeOperations.Min:                   bst.Min();           break;
+                    case BinarySearchTreeOperations.Max:                   bst.Max();           break;
+                    case BinarySearchTreeOperations.HeightOfTree:          bst.Height();        break;
 
-                    case BinarySearchTree_Operations.EXIT:
+                    case BinarySearchTreeOperations.EXIT:
                         Console.WriteLine("You selected 0. Exiting...");
                         break;
                     default:
@@ -66,7 +66,7 @@ namespace Trees
                 }
                 //Console.WriteLine(Constants.STR_ENTER_KEY_TO_CONTINUE);
                 //Console.ReadKey();
-            } while (selectedSubOption != BinarySearchTree_Operations.EXIT);
+            } while (selectedSubOption != BinarySearchTreeOperations.EXIT);
         }
     }
 

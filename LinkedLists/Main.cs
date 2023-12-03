@@ -10,7 +10,7 @@ namespace DSA.LinkedLists
         public static void Start()
         {
             int selectedSubOptionInt = -1;
-            LinkedList_Options selectedSubOption;
+            LinkedListOptions selectedSubOption;
 
             //TODO - add option to create LinkedList/Circular LL/DoublyLL based on user selection
             LinkedList ll = new ();
@@ -38,24 +38,24 @@ namespace DSA.LinkedLists
                 int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
                 Console.WriteLine("");
 
-                selectedSubOption = (LinkedList_Options)selectedSubOptionInt;
+                selectedSubOption = (LinkedListOptions)selectedSubOptionInt;
                 Console.WriteLine("Selected sub-option: " + selectedSubOption.ToString() + "\n");
                 Console.WriteLine(Constants.STR_LINE_SEPERATOR);
 
                 switch (selectedSubOption)
                 {
-                    case LinkedList_Options.Create:             ll.Create();        break;
-                    case LinkedList_Options.Display:            ll.Display();       break;
-                    case LinkedList_Options.Insert:             ll.Insert();        break;
-                    case LinkedList_Options.Search:             ll.Search();        break;
-                    case LinkedList_Options.Update:             ll.Update();        break;
-                    case LinkedList_Options.Delete:             ll.Delete();        break;
-                    case LinkedList_Options.Reverse:            ll.Reverse();       break;
-                    case LinkedList_Options.Sort:               ll.Sort();          break;
-                    case LinkedList_Options.Merge:              ll.Merge();         break;
-                    case LinkedList_Options.GeeksForGeeks0:     ll.MiddleOfList();  break;
-                    case LinkedList_Options.GeeksForGeeks1:     ll.CheckIfCircularList(); break;
-                    case LinkedList_Options.EXIT:
+                    case LinkedListOptions.Create:             ll.Create();        break;
+                    case LinkedListOptions.Display:            ll.Display();       break;
+                    case LinkedListOptions.Insert:             ll.Insert();        break;
+                    case LinkedListOptions.Search:             ll.Search();        break;
+                    case LinkedListOptions.Update:             ll.Update();        break;
+                    case LinkedListOptions.Delete:             ll.Delete();        break;
+                    case LinkedListOptions.Reverse:            ll.Reverse();       break;
+                    case LinkedListOptions.Sort:               ll.Sort();          break;
+                    case LinkedListOptions.Merge:              ll.Merge();         break;
+                    case LinkedListOptions.GeeksForGeeks0:     ll.MiddleOfList();  break;
+                    case LinkedListOptions.GeeksForGeeks1:     ll.CheckIfCircularList(); break;
+                    case LinkedListOptions.EXIT:
                         Console.WriteLine("You selected 0. Exiting...");
                         break;
                     default:
@@ -64,7 +64,7 @@ namespace DSA.LinkedLists
                 }
                 //Console.WriteLine(Constants.STR_ENTER_KEY_TO_CONTINUE);
                 //Console.ReadKey();
-            } while (selectedSubOption != LinkedList_Options.EXIT);
+            } while (selectedSubOption != LinkedListOptions.EXIT);
         }
 
     }

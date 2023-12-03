@@ -9,7 +9,7 @@ namespace Trees
         public static void Start()
         {
             int selectedSubOptionInt = -1;
-            BinaryTree_Operations selectedSubOption;
+            BinaryTreeOperations selectedSubOption;
             BinaryTree bt = new();
 
             do
@@ -32,23 +32,23 @@ namespace Trees
                 int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
                 Console.WriteLine("");
 
-                selectedSubOption = (BinaryTree_Operations)selectedSubOptionInt;
+                selectedSubOption = (BinaryTreeOperations)selectedSubOptionInt;
                 Console.WriteLine("Selected sub-option: " + selectedSubOption.ToString() + "\n");
                 Console.WriteLine(DSA.Common.Constants.STR_LINE_SEPERATOR);
 
                 switch (selectedSubOption)
                 {
-                    case BinaryTree_Operations.Create_Tree_1:           bt.Create_Tree_1(); break;
-                    case BinaryTree_Operations.Create_Tree_2:           bt.Create_Tree_2(); break;
-                    case BinaryTree_Operations.Create_Tree_3:           bt.Create_Tree_3(); break;
-                    case BinaryTree_Operations.Display:                 bt.Display();       break;
-                    case BinaryTree_Operations.PreOrderTraversal:       bt.PreOrder();      break;
-                    case BinaryTree_Operations.InOrderTraversal:        bt.InOrder();       break;
-                    case BinaryTree_Operations.PostOrderTraversal:      bt.PostOrder();     break;
-                    case BinaryTree_Operations.LevelOrder:              bt.LevelOrder();    break;
-                    case BinaryTree_Operations.HeightOfTree:            bt.Height();        break;
+                    case BinaryTreeOperations.Create_Tree_1:           bt.Create_Tree_1(); break;
+                    case BinaryTreeOperations.Create_Tree_2:           bt.Create_Tree_2(); break;
+                    case BinaryTreeOperations.Create_Tree_3:           bt.Create_Tree_3(); break;
+                    case BinaryTreeOperations.Display:                 bt.Display();       break;
+                    case BinaryTreeOperations.PreOrderTraversal:       bt.PreOrder();      break;
+                    case BinaryTreeOperations.InOrderTraversal:        bt.InOrder();       break;
+                    case BinaryTreeOperations.PostOrderTraversal:      bt.PostOrder();     break;
+                    case BinaryTreeOperations.LevelOrder:              bt.LevelOrder();    break;
+                    case BinaryTreeOperations.HeightOfTree:            bt.Height();        break;
 
-                    case BinaryTree_Operations.EXIT:
+                    case BinaryTreeOperations.EXIT:
                         Console.WriteLine("You selected 0. Exiting...");
                         break;
                     default:
@@ -57,7 +57,7 @@ namespace Trees
                 }
                 //Console.WriteLine(Constants.STR_ENTER_KEY_TO_CONTINUE);
                 //Console.ReadKey();
-            } while (selectedSubOption != BinaryTree_Operations.EXIT);
+            } while (selectedSubOption != BinaryTreeOperations.EXIT);
         }
     }
 

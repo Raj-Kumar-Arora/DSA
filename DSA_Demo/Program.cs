@@ -11,7 +11,7 @@ internal class Program
         Console.WriteLine(Constants.STR_LINE_SEPERATOR);
         Console.WriteLine("\t*** Demo of all DSA features ***");
         Console.WriteLine(Constants.STR_LINE_SEPERATOR);
-        DSA_Options selectedOption;
+        DSAOptions selectedOption;
         int selectedOptionInt;
 
         do
@@ -34,20 +34,20 @@ internal class Program
             {
                 Console.Clear();
 
-                selectedOption = (DSA_Options)selectedOptionInt;
+                selectedOption = (DSAOptions)selectedOptionInt;
                 Console.WriteLine("Selected option: " + selectedOption.ToString());
 
                 switch (selectedOption)
                 {
-                    case DSA_Options.Linkedlists:   DSA.LinkedLists.Main.Start();   break;
-                    case DSA_Options.Arrays:        DSA.Arrays.Main.Start();        break;
-                    case DSA_Options.Strings:       DSA.Strings.Main.Start();       break;
-                    case DSA_Options.Stacks:        DSA.Stacks.Main.Start();        break;
-                    case DSA_Options.Queues:        DSA.Queues.Main.Start();        break;
-                    case DSA_Options.Trees:         DSA.Trees.Main.Start();         break;
-                    case DSA_Options.Graphs:        DSA.Graphs.Main.Start();        break;
+                    case DSAOptions.Linkedlists:   DSA.LinkedLists.Main.Start();   break;
+                    case DSAOptions.Arrays:        DSA.Arrays.Main.Start();        break;
+                    case DSAOptions.Strings:       DSA.Strings.Main.Start();       break;
+                    case DSAOptions.Stacks:        DSA.Stacks.Main.Start();        break;
+                    case DSAOptions.Queues:        DSA.Queues.Main.Start();        break;
+                    case DSAOptions.Trees:         DSA.Trees.Main.Start();         break;
+                    case DSAOptions.Graphs:        DSA.Graphs.Main.Start();        break;
                         //Console.WriteLine("Selected option: " + selectedOption.ToString() + "\t is not yet implemented!\n");
-                    case DSA_Options.EXIT:
+                    case DSAOptions.EXIT:
                         Console.WriteLine("You selected 0. Exiting...");
                         break;
                     default:
@@ -57,6 +57,6 @@ internal class Program
             }
             //Console.WriteLine(Constants.STR_ENTER_KEY_TO_CONTINUE);
             //Console.ReadKey();
-        } while (selectedOption != DSA_Options.EXIT);
+        } while (selectedOption != DSAOptions.EXIT);
     }
 }

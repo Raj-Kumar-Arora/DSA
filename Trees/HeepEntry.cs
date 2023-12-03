@@ -8,7 +8,7 @@ namespace Trees
         public static void Start()
         {
             int selectedSubOptionInt = -1;
-            Heap_Operations selectedSubOption;
+            HeapOperations selectedSubOption;
             Heap heap = new();
 
             do
@@ -26,18 +26,18 @@ namespace Trees
                 int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
                 Console.WriteLine("");
 
-                selectedSubOption = (Heap_Operations)selectedSubOptionInt;
+                selectedSubOption = (HeapOperations)selectedSubOptionInt;
                 Console.WriteLine("Selected sub-option: " + selectedSubOption.ToString() + "\n");
                 Console.WriteLine(DSA.Common.Constants.STR_LINE_SEPERATOR);
 
                 switch (selectedSubOption)
                 {
-                    case Heap_Operations.Create_Tree:           heap.Create_Tree();   break;
-                    case Heap_Operations.Display:               heap.Display();       break;
-                    case Heap_Operations.Insert:                heap.Insert();        break;
-                    case Heap_Operations.Delete:                heap.Delete();        break;
+                    case HeapOperations.Create_Tree:           heap.Create_Tree();   break;
+                    case HeapOperations.Display:               heap.Display();       break;
+                    case HeapOperations.Insert:                heap.Insert();        break;
+                    case HeapOperations.Delete:                heap.Delete();        break;
 
-                    case Heap_Operations.EXIT:
+                    case HeapOperations.EXIT:
                         Console.WriteLine("You selected 0. Exiting...");
                         break;
                     default:
@@ -46,7 +46,7 @@ namespace Trees
                 }
                 //Console.WriteLine(Constants.STR_ENTER_KEY_TO_CONTINUE);
                 //Console.ReadKey();
-            } while (selectedSubOption != Heap_Operations.EXIT);
+            } while (selectedSubOption != HeapOperations.EXIT);
         }
     }
 
