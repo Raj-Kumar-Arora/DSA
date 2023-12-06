@@ -9,13 +9,19 @@
         }
         enum DirectedGraphAdjMatrixOperations
         {
-            DisplayAdjMatrix = 1, InsertVertex, InsertEdge, DeleteEdge, DisplayIndegreeOutDegree, CheckIfEdgeExists,
+            CreateGraph = 1, DisplayAdjMatrix, InsertVertex, InsertEdge, DeleteEdge, DisplayIndegreeOutDegree, CheckIfEdgeExists,
+            BFSTraversal, DFSTraversal,
             EXIT = 0
         }
         enum DirectedGraphAdjListOperations
         {
             DisplayAdjList = 1, InsertVertex, DeleteVertex, InsertEdge, DeleteEdge, DisplayIndegreeOutDegree, CheckIfEdgeExists,
+            BFSTraversal, DFSTraversal,
             EXIT = 0
+        }
+        enum VertexState
+        {
+            INITIAL = 1, WAITING, VISITED
         }
     }
 }

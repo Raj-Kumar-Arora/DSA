@@ -1,4 +1,10 @@
-﻿namespace Graphs
+﻿
+using DSA.Common;
+using DSA.Graphs.Enums;
+using Graphs.AdjacencyList;
+using System;
+
+namespace Graphs
 {
     class DirectedGraph : BaseGraph
     {
@@ -11,6 +17,48 @@
         {
             adjMatrix = new bool[MAX_VERTICES, MAX_VERTICES];
             vertexList = new Vertex[MAX_VERTICES];
+        }
+        internal void CreateGraph()
+        {
+            // Smaller graph for testing
+            //InsertVertex("0");
+            //InsertVertex("1");
+            //InsertVertex("2");
+            //InsertVertex("3");
+            //InsertVertex("5");
+            //InsertEdge("0", "1");
+            //InsertEdge("0", "3");
+            //InsertEdge("1", "2");
+            //InsertEdge("1", "4");
+            //InsertEdge("2", "5");
+
+            InsertVertex("0");
+            InsertVertex("1");
+            InsertVertex("2");
+            InsertVertex("3");
+            InsertVertex("4");
+            InsertVertex("5");
+            InsertVertex("6");
+            InsertVertex("7");
+            InsertVertex("8");
+            InsertVertex("9");
+
+            InsertEdge("0", "1");
+            InsertEdge("0", "3");
+            InsertEdge("1", "2");
+            InsertEdge("1", "4");
+            InsertEdge("1", "5");
+            InsertEdge("2", "3");
+            InsertEdge("2", "5");
+            InsertEdge("3", "6");
+            InsertEdge("4", "5");
+            InsertEdge("4", "7");
+            InsertEdge("5", "6");
+            InsertEdge("5", "8");
+            InsertEdge("6", "8");
+            InsertEdge("6", "9");
+            InsertEdge("7", "8");
+            InsertEdge("8", "9");
         }
         internal void DisplayGraphInfo()
         {
@@ -85,7 +133,29 @@
             Console.WriteLine("OutDegree for " + vertex.Name + " : " + OutDegree(vertex));
             Console.WriteLine("InDegree for " + vertex.Name + " : " + InDegree(vertex));
         }
+        internal void BFSTraversal()
+        {
+            Console.WriteLine("\nSupported sub-options in BFS Traversal:");
+            Console.WriteLine("1. BFS Traversal starting from a specific vertex");
+            Console.WriteLine("   Nodes not reachable from this specific index will not be traversed");
+            Console.WriteLine("2. BFS Traversal for all vertices");
+            Console.Write("\nSelect sub-option: ");
+            int selectedSubOptionInt = -1;
+            int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
+            Console.WriteLine("");
 
+            switch (selectedSubOptionInt)
+            {
+                case 1:     BFSTraversalFromStartVertex();              break;
+                case 2:     BFSTraversal_AllVertex();                   break;
+                default:    Console.WriteLine("Select a valid option"); break;
+            }
+            Console.WriteLine("");
+        }
+        internal void DFSTraversal()
+        {
+            Console.WriteLine(Constants.STR_TO_BE_IMPLEMENTED);
+        }
         private void DisplayAdjacencyMatrix()
         {
             for(int i = 0; i < noOfVertices; i++)
@@ -128,6 +198,10 @@
         private bool IsAdjacent(int v1Index, int v2Index)
         {
             return adjMatrix[v1Index, v2Index];
+        }
+        private void InsertEdge(string v1Name, string v2Name)
+        {
+            InsertEdge(new Vertex(v1Name), new Vertex(v2Name));
         }
         private void InsertEdge(Vertex v1, Vertex v2)
         {
@@ -187,7 +261,62 @@
                     inDegree++;
             return inDegree;
         }
+        private void BFSTraversalFromStartVertex()
+        {
+            Console.Write("Enter vertex's name: ");
+            string? startVertextName = Console.ReadLine();
+            if (string.IsNullOrEmpty(startVertextName) || GetIndex(new Vertex(startVertextName)) == -1)
+            {
+                Console.WriteLine("Enter a valid vertex name");
+                return;
+            }
+            else
+            {
+                //Reset vertex state to INTIAL
+                for (int i = 0; i < noOfVertices; i++)
+                    vertexList[i].State = VertexState.INITIAL;
+                
+                Console.Write("BFS Traversal : ");
+                BFSTraversalFromSpecificVertexIndex(GetIndex(new Vertex(startVertextName)));   //TODO : find a way to reduce duplicate call for GetIndex in this method
+            }
+        }
+        private void BFSTraversalFromSpecificVertexIndex(int startVertexIndex)
+        {
+            Queue<int> qu = new();
+            qu.Enqueue(startVertexIndex);
+            vertexList[startVertexIndex].State = VertexState.WAITING;
 
+            while (qu.Count != 0)    //TODO: could this check be    qu.Count > 0  ?
+            {
+                startVertexIndex = qu.Dequeue();
+                Console.Write(" " + vertexList[startVertexIndex].Name + " ");
+                vertexList[startVertexIndex].State = VertexState.VISITED;
 
+                for (int i = 0; i < noOfVertices; i++)
+                {
+                    if (IsAdjacent(startVertexIndex, i) && vertexList[i].State == VertexState.INITIAL)
+                    {
+                        qu.Enqueue(i);
+                        vertexList[i].State = VertexState.WAITING;
+                    }
+                }
+            }
+            Console.WriteLine();
+        }
+        private void BFSTraversal_AllVertex()
+        {
+            Console.Write("BFS Traversal (ALL) : ");
+
+            //Reset vertex state to INTIAL
+            for (int i = 0; i < noOfVertices; i++)
+                vertexList[i].State = VertexState.INITIAL;
+
+            BFSTraversalFromSpecificVertexIndex(0);  //Passing 0 as default start vertex index 
+
+            //now traverse vertices which were not reachable from default start vertex index 0
+            for (int i = 0; i < noOfVertices; i++)
+                if (vertexList[i].State == VertexState.INITIAL)
+                    BFSTraversalFromSpecificVertexIndex(i);
+        }
     }
 }

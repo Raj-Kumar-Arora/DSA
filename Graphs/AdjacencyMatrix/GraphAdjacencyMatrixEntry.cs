@@ -15,12 +15,15 @@ namespace Graphs.DirectedGraphAdjacencyMatrix
             do
             {
                 Console.WriteLine("\nSupported sub-options in Graph:");
-                Console.WriteLine("1. Display Graph Info (Adjacency Matrix)");
-                Console.WriteLine("2. Insert a Vertex");
-                Console.WriteLine("3. Insert an Edge");
-                Console.WriteLine("4. Delete an Edge");
-                Console.WriteLine("5. Display Indegree and OutDegree of a vertex");
-                Console.WriteLine("6. Check if edge exists between two vertices");
+                Console.WriteLine("1. Create graph with simulated vertices");
+                Console.WriteLine("2. Display Graph Info (Adjacency Matrix)");
+                Console.WriteLine("3. Insert a Vertex");
+                Console.WriteLine("4. Insert an Edge");
+                Console.WriteLine("5. Delete an Edge");
+                Console.WriteLine("6. Display Indegree and OutDegree of a vertex");
+                Console.WriteLine("7. Check if edge exists between two vertices");
+                Console.WriteLine("8. BFS Traversal");
+                Console.WriteLine("9. DFS Traversal");
 
                 Console.WriteLine("\n0. EXIT !!!");
                 Console.Write("\nSelect sub-option in Tree: ");
@@ -37,13 +40,15 @@ namespace Graphs.DirectedGraphAdjacencyMatrix
 
                 switch (selectedSubOption)
                 {
-                    case DirectedGraphAdjMatrixOperations.DisplayAdjMatrix: graph.DisplayGraphInfo(); break;
-                    case DirectedGraphAdjMatrixOperations.InsertVertex: graph.InsertVertex(); break;
-                    case DirectedGraphAdjMatrixOperations.InsertEdge: graph.InsertEdge(); break;
-                    case DirectedGraphAdjMatrixOperations.DeleteEdge: graph.DeleteEdge(); break;
-                    case DirectedGraphAdjMatrixOperations.DisplayIndegreeOutDegree: graph.DisplayIndegreeOutDegree(); break;
-                    case DirectedGraphAdjMatrixOperations.CheckIfEdgeExists: graph.EdgeExists(); break;
-
+                    case DirectedGraphAdjMatrixOperations.CreateGraph:                  graph.CreateGraph();                break;
+                    case DirectedGraphAdjMatrixOperations.DisplayAdjMatrix:             graph.DisplayGraphInfo();           break;
+                    case DirectedGraphAdjMatrixOperations.InsertVertex:                 graph.InsertVertex();               break;
+                    case DirectedGraphAdjMatrixOperations.InsertEdge:                   graph.InsertEdge();                 break;
+                    case DirectedGraphAdjMatrixOperations.DeleteEdge:                   graph.DeleteEdge();                 break;
+                    case DirectedGraphAdjMatrixOperations.DisplayIndegreeOutDegree:     graph.DisplayIndegreeOutDegree();   break;
+                    case DirectedGraphAdjMatrixOperations.CheckIfEdgeExists:            graph.EdgeExists();                 break;
+                    case DirectedGraphAdjMatrixOperations.BFSTraversal:                 graph.BFSTraversal();               break;
+                    case DirectedGraphAdjMatrixOperations.DFSTraversal:                 graph.DFSTraversal();               break;
                     case DirectedGraphAdjMatrixOperations.EXIT:
                         Console.WriteLine("You selected 0. Exiting...");
                         break;
