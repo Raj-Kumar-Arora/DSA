@@ -137,7 +137,7 @@ namespace Graphs
         {
             Console.WriteLine("\nSupported sub-options in BFS Traversal:");
             Console.WriteLine("1. BFS Traversal starting from a specific vertex");
-            Console.WriteLine("   Nodes not reachable from this specific index will not be traversed");
+            Console.WriteLine("   (Nodes not reachable from this specific index will not be traversed");
             Console.WriteLine("2. BFS Traversal for all vertices");
             Console.Write("\nSelect sub-option: ");
             int selectedSubOptionInt = -1;
@@ -154,7 +154,22 @@ namespace Graphs
         }
         internal void DFSTraversal()
         {
-            Console.WriteLine(Constants.STR_TO_BE_IMPLEMENTED);
+            Console.WriteLine("\nSupported sub-options in BFS Traversal:");
+            Console.WriteLine("1. DFS Traversal starting from a specific vertex");
+            Console.WriteLine("    (Nodes not reachable from this specific index will not be traversed");
+            Console.WriteLine("2. DFS Traversal for all vertices");
+            Console.Write("\nSelect sub-option: ");
+            int selectedSubOptionInt = -1;
+            int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
+            Console.WriteLine("");
+
+            switch (selectedSubOptionInt)
+            {
+                case 1: DFSTraversalFromStartVertex(); break;
+                case 2: DFSTraversal_AllVertex(); break;
+                default: Console.WriteLine("Select a valid option"); break;
+            }
+            Console.WriteLine("");
         }
         private void DisplayAdjacencyMatrix()
         {
@@ -274,7 +289,7 @@ namespace Graphs
             {
                 //Reset vertex state to INTIAL
                 for (int i = 0; i < noOfVertices; i++)
-                    vertexList[i].State = VertexState.INITIAL;
+                    vertexList[i].BfsState = VertexBFSTraversalState.INITIAL;
                 
                 Console.Write("BFS Traversal : ");
                 BFSTraversalFromSpecificVertexIndex(GetIndex(new Vertex(startVertextName)));   //TODO : find a way to reduce duplicate call for GetIndex in this method
@@ -284,20 +299,20 @@ namespace Graphs
         {
             Queue<int> qu = new();
             qu.Enqueue(startVertexIndex);
-            vertexList[startVertexIndex].State = VertexState.WAITING;
+            vertexList[startVertexIndex].BfsState = VertexBFSTraversalState.WAITING;
 
             while (qu.Count != 0)    //TODO: could this check be    qu.Count > 0  ?
             {
                 startVertexIndex = qu.Dequeue();
                 Console.Write(" " + vertexList[startVertexIndex].Name + " ");
-                vertexList[startVertexIndex].State = VertexState.VISITED;
+                vertexList[startVertexIndex].BfsState = VertexBFSTraversalState.VISITED;
 
                 for (int i = 0; i < noOfVertices; i++)
                 {
-                    if (IsAdjacent(startVertexIndex, i) && vertexList[i].State == VertexState.INITIAL)
+                    if (IsAdjacent(startVertexIndex, i) && vertexList[i].BfsState == VertexBFSTraversalState.INITIAL)
                     {
                         qu.Enqueue(i);
-                        vertexList[i].State = VertexState.WAITING;
+                        vertexList[i].BfsState = VertexBFSTraversalState.WAITING;
                     }
                 }
             }
@@ -309,14 +324,72 @@ namespace Graphs
 
             //Reset vertex state to INTIAL
             for (int i = 0; i < noOfVertices; i++)
-                vertexList[i].State = VertexState.INITIAL;
+                vertexList[i].BfsState = VertexBFSTraversalState.INITIAL;
 
             BFSTraversalFromSpecificVertexIndex(0);  //Passing 0 as default start vertex index 
 
             //now traverse vertices which were not reachable from default start vertex index 0
             for (int i = 0; i < noOfVertices; i++)
-                if (vertexList[i].State == VertexState.INITIAL)
+                if (vertexList[i].BfsState == VertexBFSTraversalState.INITIAL)
                     BFSTraversalFromSpecificVertexIndex(i);
+        }
+        private void DFSTraversalFromStartVertex()
+        {
+            Console.Write("Enter vertex's name: ");
+            string? startVertextName = Console.ReadLine();
+            if (string.IsNullOrEmpty(startVertextName) || GetIndex(new Vertex(startVertextName)) == -1)
+            {
+                Console.WriteLine("Enter a valid vertex name");
+                return;
+            }
+            else
+            {
+                //Reset vertex state to INTIAL
+                for (int i = 0; i < noOfVertices; i++)
+                    vertexList[i].DfsState = VertexDFSTraversalState.INITIAL;
+
+                Console.Write("DFS Traversal : ");
+                DFSTraversalFromSpecificVertexIndex(GetIndex(new Vertex(startVertextName)));   //TODO : find a way to reduce duplicate call for GetIndex in this method
+            }
+
+        }
+        private void DFSTraversalFromSpecificVertexIndex(int startVertexIndex)
+        {
+            Stack<int> st = new();
+            st.Push(startVertexIndex);
+            while (st.Count != 0)            //TODO: could this check be    st.Count > 0  ?
+            {
+                startVertexIndex = st.Pop();
+                if (vertexList[startVertexIndex].DfsState == VertexDFSTraversalState.INITIAL)
+                {
+                    Console.Write(" " + vertexList[startVertexIndex].Name + " ");
+                    vertexList[startVertexIndex].DfsState = VertexDFSTraversalState.VISITED;
+                }
+
+                for (int i = noOfVertices - 1; i >= 0 ; i--)
+                {
+                    if (IsAdjacent(startVertexIndex, i) && vertexList[i].DfsState == VertexDFSTraversalState.INITIAL)
+                    {
+                        st.Push(i);
+                    }
+                }
+            }
+            Console.WriteLine();
+        }
+        private void DFSTraversal_AllVertex()
+        {
+            Console.Write("DFS Traversal (ALL) : ");
+
+            //Reset vertex state to INTIAL
+            for (int i = 0; i < noOfVertices; i++)
+                vertexList[i].DfsState = VertexDFSTraversalState.INITIAL;
+
+            DFSTraversalFromSpecificVertexIndex(0);  //Passing 0 as default start vertex index 
+
+            //now traverse vertices which were not reachable from default start vertex index 0
+            for (int i = 0; i < noOfVertices; i++)
+                if (vertexList[i].DfsState == VertexDFSTraversalState.INITIAL)
+                    DFSTraversalFromSpecificVertexIndex(i);
         }
     }
 }

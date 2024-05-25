@@ -49,6 +49,10 @@ namespace DSA
                     Console.WriteLine("Please enter a valid integer no.");
                 }
 
+                Insert(data);
+            }
+            public void Insert(int data)
+            {              
                 Node? tmp = Start;
                 Node? prev = null;
                 Node? newNode = new Node(data);
@@ -68,20 +72,20 @@ namespace DSA
                         tmp.next = newNode;
                         break;
                     }
-                    else if (tmp.data == refData)
-                    {
-                        if (before == true)
-                        {
-                            newNode.next = tmp;
-                            prev.next = newNode;
-                        }
-                        else if (before == false)
-                        {
-                            newNode.next = tmp?.next;
-                            tmp.next = newNode;
-                        }
-                        break;
-                    }
+                    //else if (tmp.data == refData)
+                    //{
+                    //    if (before == true)
+                    //    {
+                    //        newNode.next = tmp;
+                    //        prev.next = newNode;
+                    //    }
+                    //    else if (before == false)
+                    //    {
+                    //        newNode.next = tmp?.next;
+                    //        tmp.next = newNode;
+                    //    }
+                    //    break;
+                    //}
                     else
                     {
                         prev = tmp;
@@ -89,6 +93,7 @@ namespace DSA
                     }
                 } while (tmp != null);
             }
+
             public void Search()
             {
                 int data;
@@ -272,8 +277,10 @@ namespace DSA
             }
             public void Merge()
             {
-                Console.WriteLine("TO BE IMPLEMENTED...");
-            }
+                //Console.WriteLine("TO BE IMPLEMENTED...");
+                Merging2SoredLists.Merge();
+           }
+
             #endregion Basic LinkedList operations
 
             #region GeeksForGeeks Problems

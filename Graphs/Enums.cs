@@ -19,9 +19,13 @@
             BFSTraversal, DFSTraversal,
             EXIT = 0
         }
-        enum VertexState
+        enum VertexBFSTraversalState
         {
             INITIAL = 1, WAITING, VISITED
+        }
+        enum VertexDFSTraversalState
+        {
+            INITIAL = 0, VISITED
         }
     }
 }
