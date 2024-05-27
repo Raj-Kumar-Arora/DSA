@@ -10,7 +10,8 @@
         enum BinaryTreeOperations
         {
             Create_Tree_1 = 1, Create_Tree_2, Create_Tree_3, Display, PreOrderTraversal, InOrderTraversal, PostOrderTraversal, LevelOrder,
-            HeightOfTree,
+            HeightOfTree, SearchNode,
+            Tree_LeetCodeProblems,
             EXIT = 0
         }
         enum BinarySearchTreeOperations

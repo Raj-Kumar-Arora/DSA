@@ -14,12 +14,13 @@ namespace DSA
             #region public methods - Basic Binary Tree Operations
             public void Create_Tree_1()  //Level order - P Q R A B X
             {
-                root = new Node('P');
-                root.left = new Node('Q');
-                root.right = new Node('R');
-                root.left.left = new Node('A');
-                root.left.right = new Node('B');
-                root.right.left = new Node('X');
+                root = new Node(10);
+                root.left = new Node(11);
+                root.right = new Node(12);
+                root.left.left = new Node(13);
+                root.left.right = new Node(14);
+                root.right.left = new Node(15);
+                root.right.right = new Node(16);
             }
             public void Create_Tree_2()  //Level order - 70 40 80 35 50 75 89 30 37 55 82 93
             {
@@ -187,6 +188,12 @@ namespace DSA
                     return true;
                 }
                 else return false;
+            }
+
+            public bool SearchNode()
+            {
+                Console.WriteLine("TO BE IMPLEMENTED...");
+                return true;
             }
             #endregion public methods - Basic Binary Tree operations
         }

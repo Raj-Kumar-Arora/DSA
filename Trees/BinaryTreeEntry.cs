@@ -26,6 +26,8 @@ namespace Trees
                 Console.WriteLine("9. Height Of Tree");
                 Console.WriteLine("10. Searching of a node in Tree");
 
+                Console.WriteLine("11. Tree_LeetCodeProblems");
+
                 Console.WriteLine("\n0. EXIT !!!");
                 Console.Write("\nSelect sub-option in Tree: ");
 
@@ -47,6 +49,9 @@ namespace Trees
                     case BinaryTreeOperations.PostOrderTraversal:      bt.PostOrder();     break;
                     case BinaryTreeOperations.LevelOrder:              bt.LevelOrder();    break;
                     case BinaryTreeOperations.HeightOfTree:            bt.Height();        break;
+                    case BinaryTreeOperations.SearchNode:              bt.SearchNode();    break;
+
+                    case BinaryTreeOperations.Tree_LeetCodeProblems:   Tree_LeetCodeProblems.Start();         break;
 
                     case BinaryTreeOperations.EXIT:
                         Console.WriteLine("You selected 0. Exiting...");
