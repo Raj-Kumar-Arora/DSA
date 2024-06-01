@@ -1,11 +1,7 @@
 ﻿using DSA.Trees;
-using DSA.Trees.Enums;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Xml.Linq;
 
 namespace Trees
 {
@@ -26,6 +22,16 @@ namespace Trees
                 Console.WriteLine("6. CountNodes");
                 Console.WriteLine("7. AverageOfLevels");
                 Console.WriteLine("8. GetMinimumDifference");
+                Console.WriteLine("9. SortedArrayToBST");
+                Console.WriteLine("10. SearchInsert");
+                Console.WriteLine("11. AddBinary");
+                Console.WriteLine("12. ReverseBits");
+                Console.WriteLine("13. HammingWeight");
+                Console.WriteLine("14. SingleNumber");
+                Console.WriteLine("15. IsPalindrome");
+                Console.WriteLine("16. PlusOne");
+                Console.WriteLine("17. MySqrt");
+                Console.WriteLine("18. ClimbStairs");
 
                 Console.WriteLine("\n0. EXIT !!!");
                 Console.Write("\nSelect sub-option in Tree: ");
@@ -49,7 +55,16 @@ namespace Trees
                     case 6: Tree_LeetCodeProblems.CountNodes(); break;
                     case 7: Tree_LeetCodeProblems.AverageOfLevels(); break;
                     case 8: Tree_LeetCodeProblems.GetMinimumDifference(); break;
-
+                    case 9: Tree_LeetCodeProblems.SortedArrayToBST(); break;
+                    case 10: Tree_LeetCodeProblems.SearchInsert(); break;
+                    case 11: Tree_LeetCodeProblems.AddBinary(); break;
+                    case 12: Tree_LeetCodeProblems.ReverseBits(); break;
+                    case 13: Tree_LeetCodeProblems.HammingWeight(); break;
+                    case 14: Tree_LeetCodeProblems.SingleNumber(); break;
+                    case 15: Tree_LeetCodeProblems.IsPalindrome(); break;
+                    case 16: Tree_LeetCodeProblems.PlusOne(); break;
+                    case 17: Tree_LeetCodeProblems.MySqrt(); break;
+                    case 18: Tree_LeetCodeProblems.ClimbStairs(); break;
 
                     case 0:
                         Console.WriteLine("You selected 0. Exiting...");
@@ -59,6 +74,471 @@ namespace Trees
                         break;
                 }
             } while (selectedSubOptionInt != 0);
+        }
+
+        private static void ClimbStairs()
+        {
+            ////CASE - 1 
+            int x = 4;
+            //int[] expectedOutput = 5 ;
+
+            var actualOutput = ClimbStairs(x);
+            Console.WriteLine(" Actual Output : " + actualOutput);
+        }
+
+        private static int ClimbStairs(int n)
+        {
+            if (n <= 0) return 0;
+            if (n > 0 && n < 3) return n;
+
+            int[] arr = new int[n+1];
+            arr[1] = 1;
+            arr[2] = 2;
+
+            ClimbStairs(n, arr);
+            return arr[n];
+        }
+        private static void ClimbStairs(int n, int[] arr)
+        {
+            for (int i = 3; i <= n; i++)
+            {
+                arr[i] = arr[i-1] + arr[i-2];
+            }
+        }
+
+        //2nd & BETTER WAY
+        private static int ClimbStairs_2ndWay(int n)
+        {
+            if (n <= 0) return 0;
+            if (n > 0 && n < 3) return n;
+
+            int sum = 0;
+            int first = 1, second = 2;
+
+            for (int i = 3; i<=n; i++)
+            {
+                sum = first + second;
+                first = second;
+                second = sum;
+            }
+            return sum;
+        }
+        private static void MySqrt()
+        {
+            //////CASE - 1 
+            int x = 2147395600;
+            ////int[] expectedOutput = 46340 ;
+
+            ////CASE - 1 
+            //int x = 4;
+            //int[] expectedOutput = 2 ;
+
+            var actualOutput = MySqrt(x);
+            Console.WriteLine(" Actual Output : " + actualOutput);
+        }
+        private static int MySqrt(int x)
+        {
+            for (long i=1; i<=x; i++)
+            {
+                if (i * i > x)
+                    return (int)(i-1);
+            }
+            return 0;
+        }
+
+        //tedious way 
+        //private static int MySqrt(int x)
+        //{
+        //    int ret = 0;
+        //    // 289398
+        //    //for x=1, loop should check till i<=x
+
+        //    //for (int i = 1; i <= x; i++)
+        //    //{
+        //    //    if ((i * i <= x) &&
+        //    //            ((i + 1) * (i + 1) > x))
+        //    //        return i;
+        //    //}
+
+        //    int i = 0;
+        //    try
+        //    {                
+        //        for (i = 1; i <= x; i++)
+        //        {
+        //            if (i * i <= x)
+        //            {
+        //                int nextSqr = checked((i + 1) * (i + 1));
+
+        //                //if overflow happened then (nextSqr > x ) will be false but 
+        //                //value will be on -ve range of integer values
+        //                if (nextSqr > x)
+        //                    return i;
+        //                //else if (nextSqr >= int.MinValue)
+        //                //    return i;
+
+
+        //                //if ((nextSqr > x) == true && 
+        //                //     nextSqr > int.MaxValue == false)
+        //                //    return i;
+
+        //                //if ((nextSqr > x) == false &&
+        //                //     nextSqr > int.MinValue == true)
+        //                //    return i;
+        //            }
+
+        //            //return i;
+        //        }
+
+        //    }
+        //    catch (OverflowException)
+        //    {
+        //        ret = i;
+        //    }
+        //    finally
+        //    {   }
+
+        //    return ret;
+        //}
+        private static void PlusOne()
+        {
+            ////CASE - 1 
+            //int[] digits = new int[] { 4, 3, 2, 1 };
+            //int[] expectedOutput = 4 3 2 2 ;
+
+            ////CASE - 2 
+            //int[] digits = new int[] { 4, 3, 9, 9 };
+            //int[] expectedOutput = 4 4 0 0  ;
+
+            ////CASE - 3 
+            //int[] digits = new int[] { 9 };
+            //int[] expectedOutput = 1 0  ;
+
+            ////CASE - 4 
+            //int[] digits = new int[] { 9,9,9 };
+            //int[] expectedOutput = 1 0 0 0;
+
+            ////CASE - 5 
+            int[] digits = new int[] { 9, 0,9,9 };
+            //int[] expectedOutput = 9 1 0 0 ;
+
+            var actualOutput = PlusOne(digits);
+            Console.WriteLine(" Actual Output : " + actualOutput);
+        }
+        private static int[] PlusOne(int[] digits)
+        {
+            int len = digits.Length;
+            for (int i = 0; i<len; i++)
+            {
+                var currDigitIndex = len - 1 - i;
+
+                if (digits[currDigitIndex] == 9)
+                {
+                    digits[currDigitIndex] = 0;
+                    
+                    //if current index is the MSB
+                    if (currDigitIndex == 0)
+                    {
+                        // Create a new array with increased size
+                        int[] newDigits = new int[len+1];
+
+                        // Add 1 as MSB to the new array
+                        newDigits[0] = 1;
+
+                        // Copy existing elements to the new array
+                        // digits array will copy starting from index 0
+                        // and new array destination will be starting from index 1
+                        // because at index 0 (MSB) we have stored 1 as incremented value
+                        Array.Copy(digits,0, newDigits, 1,len);
+
+                        return newDigits;
+                    }
+                }
+                else
+                {
+                    digits[currDigitIndex]++;
+                    break;
+                }
+            }
+            return digits;
+        }
+        //private void PlusOne(int[] digits, int currDigitIndex)
+        //{
+        //    if (digits[currDigitIndex] == 9)
+        //    {
+        //        digits[currDigitIndex] = 0;
+        //        PlusOne
+        //        }
+        //    else
+        //    {
+        //        digits[currDigitIndex]++;
+        //        break;
+        //    }
+        //}
+        private static void IsPalindrome()
+        {
+            ////CASE - 1 
+            //int n = 141;
+            //bool expectedOutput = true;
+
+            ////CASE - 2 
+            int n = -141;
+            //bool expectedOutput = false;
+
+            bool actualOutput = IsPalindrome(n);
+            Console.WriteLine(" Actual Output : " + actualOutput);
+        }
+        private static bool IsPalindrome(int n)
+        {
+            string str = n.ToString();           
+            int len = str.Length;
+            for (int i = 0; i < len / 2; i++)
+            {
+                if (str[i] != str[len - 1 - i])
+                    return false;
+            }
+            return true;
+        }
+
+        //failing for case - 2 (n = -141)
+        //private static bool IsPalindrome(int n)
+        //{
+        //    List<int> digitsArr = new();
+        //    while (n>0)
+        //    {
+        //        digitsArr.Add(n % 10);
+        //        n /= 10;
+        //    }
+        //    int len = digitsArr.Count;
+        //    for (int i = 0; i< len/2; i++)
+        //    {
+        //        if (digitsArr[i] != digitsArr[len - 1 - i])
+        //            return false;
+        //    }
+        //    return true;
+        //}
+
+        private static void SingleNumber()
+        {
+            ////CASE - 1 
+            int[] nums = new int[] { 2, 2, 1 };
+            //int expectedOutput = 1;
+
+            int actualOutput = SingleNumber(nums);
+            Console.WriteLine(" Actual Output : " + actualOutput);
+        }
+        private static int SingleNumber(int[] nums)
+        {
+            Dictionary<int, int> dict = new();
+            for (int i=0; i<nums.Length; i++)
+            {
+                if (dict.TryGetValue(nums[i], out int result))
+                {
+                    dict[nums[i]]++;
+                }
+                else
+                    dict.Add(nums[i], 1);
+            }
+            foreach (var kvp in dict)
+            {
+                if (kvp.Value == 1)
+                    return kvp.Key;
+            }
+            return -1;
+        }
+
+        private static void HammingWeight()
+        {
+            // CASE - 1
+            //int n = 11;
+            //expected output = 3
+
+            //case - 2             
+            int n = 2147483645;
+            //expected output = 30
+
+            int actualOutput = HammingWeight(n);
+            Console.WriteLine(" Actual Output : " + actualOutput);
+        }
+        private static int HammingWeight(int n)
+        {
+            int count = 0;
+
+            while (n > 0)
+            {
+                int lsd = n % 2;
+                if (lsd == 1) 
+                    count++;
+                n = n / 2;
+            }
+            return count;
+        }
+
+        private static void ReverseBits()
+        {
+            ////CASE - 1 
+            //uint n = 0b0101;   
+            //expectedOutput = "0b 1010";  //decimal value 10
+
+            //CASE - 2 
+            //uint n = 0b1010;
+            //expectedOutput = "0b 0101";  //decimal value 5
+
+            //CASE - 3 
+              uint n = 0b1101;
+            //expectedOutput = "0b 1011";  //decimal value 11
+
+            uint actualOutput = ReverseBits(n);
+            Console.WriteLine(" Actual Output : " + actualOutput);
+        }
+        private static uint ReverseBits(uint n)
+        {
+            // APPROACH 
+            // STEP - 1  Get ith bit from LSB towards MSB
+            // STEP - 2  Left shift bit (32 - ith) times to perform reverse 
+            // STEP - 3  Do OR operation with result of previous steps
+            uint result = 0;
+            int len = 4; // 32;  //32 bit unit length
+
+            for (int i = 0; i < len; i++)
+            {
+                // STEP - 1  Get ith bit from LSB towards MSB
+                uint t1 = (uint)(n & 1);
+                n = n >> 1;
+
+                // STEP - 2  Left shift bit (32 - ith) times to perform reverse 
+                uint t2 = t1 << (len - i - 1);
+
+                // STEP - 3  Do OR operation with result of previous steps
+                result |= t2;
+            }
+            return result;
+
+            //Sln # 2  - NOT WORKING 
+            //result = result << 1;
+            //if (n % 2 == 1)
+            //    result++;
+            //n = n >> 1;
+
+            //1st sln NOT WORKING 
+            //uint lsb = (uint)(n & i);
+            //uint reverse = lsb << (len-i-1);
+            //result = result | reverse;
+            //n = n >> 1;
+        }
+        private static void AddBinary()
+        {
+            ////CASE - 1 
+            string a = "11", b = "1";
+            //string expectedOutput = "100";
+
+            //CASE - 2 
+            //string a = "1010", b = "1011";
+            //string expectedOutput = "10101";
+
+            //CASE - 3 
+            //string a = "", b = "";
+            //string expectedOutput = "100";
+
+            string actualOutput = AddBinary(a, b);
+            Console.WriteLine(" Actual Output : " + actualOutput);
+        }
+        private static string AddBinary(string a, string b)
+        {
+            int i = a.Length - 1 , j = b.Length - 1;
+            int carry = 0;
+            string result = "";
+
+            //// Step - 1   Fetching LSB(Least significant bit) i.e. right most bit
+            ///             from both strings and then taking their sum in SumDigit
+            ///  Step - 2   Carry forward is calculated from SumDigit using / , % 
+            ///             as sumDigit is integer
+            ///  Step - 3   Adjust carry forward in final sum
+            while (i >= 0 || j >= 0 || carry == 1)
+            {
+                int firstDigit  = (i >= 0) ? (a[i--] - '0') : 0;    
+                int secondDigit = (j >= 0) ? (b[j--] - '0') : 0;
+                int sumDigit = firstDigit + secondDigit + carry;
+                carry = sumDigit / 2;
+
+                result += (sumDigit % 2).ToString();
+            }
+            return new string(result.Reverse().ToArray());
+        }
+        private static void SearchInsert()
+        {
+            ////CASE - 1 
+            //int[] nums = new int[] { 1, 3, 5, 6 };
+            //int target = 5;
+            ////int expectedOutput = 2;
+
+            //CASE - 2 
+            int[] nums = new int[] { 1, 3, 5, 6 };
+            int target = 2;
+            //int expectedOutput = 1;
+
+            ////CASE - 3 
+            //int[] nums = new int[] { 1, 3, 5, 6 };
+            //int target = 7;
+            ////int expectedOutput = 4;
+
+            int actualOutput = SearchInsert(nums, target);
+            Console.WriteLine(" Actual Output : " + actualOutput);
+
+        }
+        private static int SearchInsert(int[] nums, int target)
+        {
+            if (nums.Length == 0) return 0;
+            int i = 0;
+            for (i = 0; i<nums.Length; i++)
+            {
+                if (nums[i] == target) return i;
+                else if (nums[i] < target) continue;
+                else if (nums[i] > target)
+                {
+                    if (i == 0 || nums[i - 1] < target)
+                        return i;
+                }
+            }
+            //target not found in array and its higher than last element 
+            //insert at end of array
+            // if (i == nums.Length)   
+            return i;
+        }
+        private static void SortedArrayToBST()
+        {
+            //////// CASE - 1
+            int[] nums = new int[] { -10, -3, 0, 5, 9 };
+            //int expectedOutput = 1;
+
+            //////// CASE - 2
+
+            //////// CASE - 3
+
+
+            ////// CASE - 4   
+
+            Node actualOutput = SortedArrayToBST(nums);
+
+           // Console.WriteLine("Actual Output = " + new BinarySearchTree(actualOutput));
+        }
+
+        public static Node SortedArrayToBST(int[] nums)
+        {
+            //Approach:-
+            //We will make use of the fact that the inorder traversal of BST gives Sorted Array
+            //So we will reverse the logic of inorder traversal
+            //by using Divide & Conquer technique
+            if (nums.Length == 0) return null;
+
+            int midIndex = nums.Length / 2;
+            int[] leftArr = nums.Take(midIndex).ToArray();
+            int[] rightArr = nums.Skip(midIndex+1).ToArray();
+
+            Node node = new Node(nums[midIndex]);
+            node.left = SortedArrayToBST(leftArr);
+            node.right = SortedArrayToBST(rightArr);
+
+            return node;
         }
 
         public static void GetMinimumDifference()
