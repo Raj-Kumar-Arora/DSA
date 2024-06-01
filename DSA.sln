@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LeetCodeProblems", "LeetCodeProblems", "{A0077BF4-1169-4188-AF88-851DB8A202CB}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSA_Demo", "BasicOperations\DSA_Demo\DSA_Demo.csproj", "{6D8BE961-AAE8-4F24-82E0-434856CF884F}"
 EndProject
@@ -24,6 +27,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "BasicOperations\Common\Common.csproj", "{B0873669-4788-4FF2-8E0D-0CDBC1BC519E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BasicDSAOperations", "BasicDSAOperations", "{8775802B-D430-4E44-9739-E5AA7546FA5B}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "LeetCodeProblems\ConsoleApp1\ConsoleApp1.csproj", "{E269451B-475A-47F9-866B-C5011B2BAAA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +75,10 @@ Global
 		{B0873669-4788-4FF2-8E0D-0CDBC1BC519E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0873669-4788-4FF2-8E0D-0CDBC1BC519E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0873669-4788-4FF2-8E0D-0CDBC1BC519E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E269451B-475A-47F9-866B-C5011B2BAAA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E269451B-475A-47F9-866B-C5011B2BAAA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E269451B-475A-47F9-866B-C5011B2BAAA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E269451B-475A-47F9-866B-C5011B2BAAA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +93,7 @@ Global
 		{A0FEBFEC-8A4A-4FBA-B93D-C9ED84614F9D} = {8775802B-D430-4E44-9739-E5AA7546FA5B}
 		{2E6E2ECB-93B2-45B2-995D-95EFC90662F9} = {8775802B-D430-4E44-9739-E5AA7546FA5B}
 		{B0873669-4788-4FF2-8E0D-0CDBC1BC519E} = {8775802B-D430-4E44-9739-E5AA7546FA5B}
+		{E269451B-475A-47F9-866B-C5011B2BAAA5} = {A0077BF4-1169-4188-AF88-851DB8A202CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2DC727A1-82AB-45CC-9A32-76EC6F08A8C0}
