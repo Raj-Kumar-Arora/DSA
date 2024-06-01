@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BasicOperations\LinkedLists\LinkedLists.csproj" />
+    <ProjectReference Include="..\BasicOperations\Trees\Trees.csproj" />
   </ItemGroup>
 
 </Project>
