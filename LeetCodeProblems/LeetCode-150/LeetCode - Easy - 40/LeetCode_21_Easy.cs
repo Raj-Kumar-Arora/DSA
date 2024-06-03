@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeetCodeProblems.LeetCode_150
+﻿namespace LeetCodeProblems.LeetCode_150
 {
     //Definition for singly-linked list.
     //public class ListNode
@@ -21,11 +15,14 @@ namespace LeetCodeProblems.LeetCode_150
     {
         public static void HasCycle()
         {
-            LinkedList<int> list = new LinkedList<int>();
+            LinkedList<int> list = new ();
 
             ////Case - 1
             ////head = [3, 2, 0, -4], pos = 1
             //LinkedListNode<int> head = new LinkedListNode<int>(3);
+
+            //LinkedListNode<int> node = new(4);       //*** check if its a valid syntax ***/
+
             //LinkedListNode<int> n2 = new LinkedListNode<int>(2);
             //LinkedListNode<int> n3 = new LinkedListNode<int>(0);
             //LinkedListNode<int> n4 = new LinkedListNode<int>(-4);

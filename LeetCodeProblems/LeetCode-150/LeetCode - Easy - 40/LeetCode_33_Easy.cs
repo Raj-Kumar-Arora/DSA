@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeetCodeProblems.LeetCode_150
+﻿namespace LeetCodeProblems.LeetCode_150
 {
     internal static class LeetCode_33_Easy
     {
@@ -45,7 +39,7 @@ namespace LeetCodeProblems.LeetCode_150
 
                 result += (sumDigit % 2).ToString();
             }
-            return new string(result.Reverse().ToArray());
+            return new string(result.Reverse().ToArray());    //**CHECK - WHY ToArray() IS NEEDED HERE ???
         }
     }
 }
