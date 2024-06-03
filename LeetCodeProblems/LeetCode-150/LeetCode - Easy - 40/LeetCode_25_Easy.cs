@@ -1,10 +1,4 @@
 ﻿using DSA.Trees;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace LeetCodeProblems.LeetCode_150
 {
     internal class LeetCode_25_Easy

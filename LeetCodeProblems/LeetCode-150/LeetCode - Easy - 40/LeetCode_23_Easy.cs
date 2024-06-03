@@ -1,5 +1,4 @@
-﻿using DSA.LinkedLists;
-using DSA.Trees;
+﻿using DSA.Trees;
 
 namespace LeetCodeProblems.LeetCode_150
 {
@@ -14,7 +13,7 @@ namespace LeetCodeProblems.LeetCode_150
                 root = new Node()
                 {
                     data = 3,
-                    left = new Node() { data = 9 },
+                    left = { data = 9 },                //**  EQUIVALENT TO new Node() { data = 9 }  **/
                     right = new Node()
                     {
                         data = 20,

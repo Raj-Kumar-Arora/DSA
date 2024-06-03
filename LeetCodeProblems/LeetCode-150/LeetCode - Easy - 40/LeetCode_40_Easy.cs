@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeetCodeProblems.LeetCode_150
+﻿namespace LeetCodeProblems.LeetCode_150
 {
     internal static class LeetCode_40_Easy
     {
