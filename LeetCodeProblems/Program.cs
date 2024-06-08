@@ -60,6 +60,8 @@ namespace Trees
                 Console.WriteLine("39. MySqrt");
                 Console.WriteLine("40. ClimbStairs");
 
+                Console.WriteLine("41 RemoveDuplicates");
+
                 Console.WriteLine("\n0. EXIT !!!");
                 Console.Write("\nSelect sub-option in Tree: ");
 
@@ -115,6 +117,10 @@ namespace Trees
                     case 38: LeetCode_38_Easy.PlusOne(); break;
                     case 39: LeetCode_39_Easy.MySqrt(); break;
                     case 40: LeetCode_40_Easy.ClimbStairs(); break;
+
+                    case 41: LeetCode_41_Medium.RemoveDuplicates(); break;
+                   // case 42: LeetCode_42_Medium.RemoveElement(); break;
+                   // case 43: LeetCode_43_Medium.RemoveDuplicates(); break;
 
                     case 0:
                         Console.WriteLine("You selected 0. Exiting...");
