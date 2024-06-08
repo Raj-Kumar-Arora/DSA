@@ -1,4 +1,6 @@
-﻿namespace LeetCodeProblems.LeetCode_150
+﻿using System.Text;
+
+namespace LeetCodeProblems.LeetCode_150
 {
     internal static class LeetCode_10_Easy
     {
