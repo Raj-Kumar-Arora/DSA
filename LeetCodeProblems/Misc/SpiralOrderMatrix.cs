@@ -29,7 +29,7 @@ namespace LeetCodeProblems.Misc
             int m = A.Count;      // no of Rows 
             int n = A[0].Count;   // no of columns
             List<int> ret = new List<int>(m * n);
-            int l = 0;           //for return list count
+            //int l = 0;           //for return list count
 
             Console.Write("no of rows : ", m);
             Console.Write("no of columns : ", n);

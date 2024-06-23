@@ -60,10 +60,28 @@ namespace Trees
                 Console.WriteLine("39. MySqrt");
                 Console.WriteLine("40. ClimbStairs");
 
-                Console.WriteLine("41 RemoveDuplicates");
+                Console.WriteLine("41. RemoveDuplicates");
+                Console.WriteLine("42. Rotate");
+                Console.WriteLine("43. MaxProfit");
+                Console.WriteLine("44. CanJump");
+                Console.WriteLine("45. Jump");
+                Console.WriteLine("46. H-Index");
+                Console.WriteLine("47. RandomizedSet");
+                Console.WriteLine("48. ProductExceptSelf");
+                Console.WriteLine("49. --");
+                Console.WriteLine("50. --");
+                Console.WriteLine("5. --");
+                Console.WriteLine("5. --");
+                Console.WriteLine("5. --");
+                Console.WriteLine("5. --");
+                Console.WriteLine("5. --");
+                Console.WriteLine("5. --");
+                Console.WriteLine("5. --");
+                Console.WriteLine("5. --");
+                Console.WriteLine("5. --");
 
                 Console.WriteLine("\n0. EXIT !!!");
-                Console.Write("\nSelect sub-option in Tree: ");
+                Console.Write("\nSelect sub-option from above LeetCode problem: ");
 
                 int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
                 Console.WriteLine("");
@@ -119,8 +137,108 @@ namespace Trees
                     case 40: LeetCode_40_Easy.ClimbStairs(); break;
 
                     case 41: LeetCode_41_Medium.RemoveDuplicates(); break;
-                   // case 42: LeetCode_42_Medium.RemoveElement(); break;
-                   // case 43: LeetCode_43_Medium.RemoveDuplicates(); break;
+                    case 42: LeetCode_42_Medium.RemoveElement(); break;
+                    case 43: LeetCode_43_Medium.MaxProfit(); break;
+                    case 44: LeetCode_44_Medium.CanJump(); break;
+                    case 45: LeetCode_45_Medium.Jump(); break;
+                    case 46: LeetCode_46_Medium.HIndex(); break;
+                    case 47: LeetCode_47_Medium.RandomizedSet(); break;
+                    case 48: LeetCode_48_Medium.ProductExceptSelf(); break;
+                    //case 49: LeetCode_49_Medium.(); break;
+
+                    //case 50: LeetCode_50_Medium.(); break;
+                    //case 51: LeetCode_51_Medium.(); break;
+                    //case 52: LeetCode_52_Medium.(); break;
+                    //case 53: LeetCode_53_Medium.(); break;
+                    //case 54: LeetCode_54_Medium.(); break;
+                    //case 55: LeetCode_55_Medium.(); break;
+                    //case 56: LeetCode_56_Medium.(); break;
+                    //case 57: LeetCode_57_Medium.(); break;
+                    //case 58: LeetCode_58_Medium.(); break;
+                    //case 59: LeetCode_59_Medium.(); break;
+                    //case 60: LeetCode_60_Medium.(); break;
+                    
+                    //case 61: LeetCode__Medium.(); break;
+                    //case 62: LeetCode__Medium.(); break;
+                    //case 63: LeetCode__Medium.(); break;
+                    //case 64: LeetCode__Medium.(); break;
+                    //case 65: LeetCode__Medium.(); break;
+                    //case 66: LeetCode__Medium.(); break;
+                    //case 67: LeetCode__Medium.(); break;
+                    //case 68: LeetCode__Medium.(); break;
+                    //case 69: LeetCode__Medium.(); break;
+                    //case 70: LeetCode__Medium.(); break;
+                    //case 71: LeetCode__Medium.(); break;
+                    //case 72: LeetCode__Medium.(); break;
+                    //case 73: LeetCode__Medium.(); break;
+                    //case 74: LeetCode__Medium.(); break;
+                    //case 75: LeetCode__Medium.(); break;
+                    //case 76: LeetCode__Medium.(); break;
+                    //case 77: LeetCode__Medium.(); break;
+                    //case 78: LeetCode__Medium.(); break;
+                    //case 79: LeetCode__Medium.(); break;
+                    //case 80: LeetCode__Medium.(); break;
+
+                    //case 81: LeetCode__Medium.(); break;
+                    //case 82: LeetCode__Medium.(); break;
+                    //case 83: LeetCode__Medium.(); break;
+                    //case 84: LeetCode__Medium.(); break;
+                    //case 85: LeetCode__Medium.(); break;
+                    //case 86: LeetCode__Medium.(); break;
+                    //case 87: LeetCode__Medium.(); break;
+                    //case 88: LeetCode__Medium.(); break;
+                    //case 89: LeetCode__Medium.(); break;
+                    //case 90: LeetCode__Medium.(); break;
+                    //case 91: LeetCode__Medium.(); break;
+                    //case 92: LeetCode__Medium.(); break;
+                    //case 93: LeetCode__Medium.(); break;
+                    //case 94: LeetCode__Medium.(); break;
+                    //case 95: LeetCode__Medium.(); break;
+                    //case 96: LeetCode__Medium.(); break;
+                    //case 97: LeetCode__Medium.(); break;
+                    //case 98: LeetCode__Medium.(); break;
+                    //case 99: LeetCode__Medium.(); break;                   
+                    //case 100: LeetCode__Medium.(); break;
+
+                    //case 101: LeetCode__Medium.(); break;
+                    //case 102: LeetCode__Medium.(); break;
+                    //case 103: LeetCode__Medium.(); break;
+                    //case 104: LeetCode__Medium.(); break;
+                    //case 105: LeetCode__Medium.(); break;
+                    //case 106: LeetCode__Medium.(); break;
+                    //case 107: LeetCode__Medium.(); break;
+                    //case 108: LeetCode__Medium.(); break;
+                    //case 109: LeetCode__Medium.(); break;
+                    //case 110: LeetCode__Medium.(); break;
+
+                    //case 111: LeetCode__Medium.(); break;
+                    //case 112: LeetCode__Medium.(); break;
+                    //case 113: LeetCode__Medium.(); break;
+                    //case 114: LeetCode__Medium.(); break;
+                    //case 115: LeetCode__Medium.(); break;
+                    //case 116: LeetCode__Medium.(); break;
+                    //case 117: LeetCode__Medium.(); break;
+                    //case 118: LeetCode__Medium.(); break;
+                    //case 119: LeetCode__Medium.(); break;
+                    //case 120: LeetCode__Medium.(); break;
+
+                    //case 121: LeetCode__Medium.(); break;
+                    //case 122: LeetCode__Medium.(); break;
+                    //case 123: LeetCode__Medium.(); break;
+                    //case 124: LeetCode__Medium.(); break;
+                    //case 125: LeetCode__Medium.(); break;
+                    //case 126: LeetCode__Medium.(); break;
+                    //case 127: LeetCode__Medium.(); break;
+                    //case 128: LeetCode__Medium.(); break;
+                    //case 129: LeetCode__Medium.(); break;
+                    //case 130: LeetCode__Medium.(); break;
+
+                    //case 131: LeetCode__Medium.(); break;
+                    //case 132: LeetCode__Medium.(); break;
+                    //case 133: LeetCode__Medium.(); break;
+                    //case 134: LeetCode__Medium.(); break;
+                    //case 135: LeetCode__Medium.(); break;
+
 
                     case 0:
                         Console.WriteLine("You selected 0. Exiting...");
