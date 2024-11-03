@@ -3,11 +3,7 @@
 
 using LeetCodeProblems.LeetCode_150;
 
-//LeetCode_23_Easy.Test();
-
-using DSA.Trees;
-
-namespace Trees
+namespace LeetCodeProblems
 {
     public static class Program
     {
@@ -68,22 +64,32 @@ namespace Trees
                 Console.WriteLine("46. H-Index");
                 Console.WriteLine("47. RandomizedSet");
                 Console.WriteLine("48. ProductExceptSelf");
-                Console.WriteLine("49. --");
-                Console.WriteLine("50. --");
-                Console.WriteLine("5. --");
-                Console.WriteLine("5. --");
-                Console.WriteLine("5. --");
-                Console.WriteLine("5. --");
-                Console.WriteLine("5. --");
-                Console.WriteLine("5. --");
-                Console.WriteLine("5. --");
-                Console.WriteLine("5. --");
-                Console.WriteLine("5. --");
+                Console.WriteLine("49. CanCompleteCircuit");
+                Console.WriteLine("50. IntToRoman");
+                Console.WriteLine("51. ReverseWords");
+                Console.WriteLine("52. Convert");
+                Console.WriteLine("53. TwoSum");
+                Console.WriteLine("54. MaxArea");
+                Console.WriteLine("55. ThreeSum");
+                Console.WriteLine("56. MinSubArrayLen");
+                Console.WriteLine("57. LengthOfLongestSubstring");
+                Console.WriteLine("58. IsValidSudoku");
+                Console.WriteLine("59. SpiralOrder");
+                Console.WriteLine("59. -");
+                Console.WriteLine("59. -");
+                Console.WriteLine("59. -");
+                Console.WriteLine("59. -");
+                Console.WriteLine("109. MaxSubArray");
+                Console.WriteLine("110. MaxSubarraySumCircular");
+                Console.WriteLine("59. -");
+                Console.WriteLine("123. WordBreak");
+                Console.WriteLine("125. LengthOfLIS");
 
                 Console.WriteLine("\n0. EXIT !!!");
                 Console.Write("\nSelect sub-option from above LeetCode problem: ");
 
-                int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
+                //int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
+                selectedSubOptionInt =  210;
                 Console.WriteLine("");
 
                 Console.WriteLine("Selected sub-option: " + selectedSubOptionInt.ToString() + "\n");
@@ -94,6 +100,19 @@ namespace Trees
 
                 switch (selectedSubOptionInt)
                 {
+                    // TOP 15 PATTERNS - ASHISH PRATAP SINGH's YOUTUBE
+                    case 201: Top_15_Patterns.LeetCodePatterns_9_1.Search(); break;
+                    case 202: Top_15_Patterns.LeetCodePatterns_9_2.SearchMatrix(); break;
+                    case 203: Top_15_Patterns.LeetCodePatterns_9_3.Backtracking(); break;
+                    case 204: Top_15_Patterns.LeetCodePatterns_9_4.BinaryTreePaths(); break;
+                    case 205: Top_15_Patterns.LeetCodePatterns_9_5.PathSum(); break;
+                    case 206: Top_15_Patterns.LeetCodePatterns_9_6.CloneGraph(); break;
+                    case 207: Top_15_Patterns.LeetCodePatterns_9_7.LevelOrder(); break;
+                    case 208: Top_15_Patterns.LeetCodePatterns_9_8.OrangesRotting(); break;
+                    case 209: Top_15_Patterns.LeetCodePatterns_9_9.FloodFill(); break;
+                    case 210: Top_15_Patterns.LeetCodePatterns_9_10.Permute(); break;
+
+                    // LEETCODE TOP 150 PROBLEMS
                     case 1: LeetCode_01_Easy.Merge(); break;
                     case 2: LeetCode_02_Easy.RemoveElement(); break;
                     case 3: LeetCode_03_Easy.RemoveDuplicates(); break;
@@ -144,20 +163,20 @@ namespace Trees
                     case 46: LeetCode_46_Medium.HIndex(); break;
                     case 47: LeetCode_47_Medium.RandomizedSet(); break;
                     case 48: LeetCode_48_Medium.ProductExceptSelf(); break;
-                    //case 49: LeetCode_49_Medium.(); break;
+                    case 49: LeetCode_49_Medium.CanCompleteCircuit(); break;
 
-                    //case 50: LeetCode_50_Medium.(); break;
-                    //case 51: LeetCode_51_Medium.(); break;
-                    //case 52: LeetCode_52_Medium.(); break;
-                    //case 53: LeetCode_53_Medium.(); break;
-                    //case 54: LeetCode_54_Medium.(); break;
-                    //case 55: LeetCode_55_Medium.(); break;
-                    //case 56: LeetCode_56_Medium.(); break;
-                    //case 57: LeetCode_57_Medium.(); break;
-                    //case 58: LeetCode_58_Medium.(); break;
-                    //case 59: LeetCode_59_Medium.(); break;
+                    case 50: LeetCode_50_Medium.IntToRoman(); break;
+                    case 51: LeetCode_51_Medium.ReverseWords(); break;
+                    case 52: LeetCode_52_Medium.Convert(); break;
+                    case 53: LeetCode_53_Medium.TwoSum(); break;
+                    case 54: LeetCode_54_Medium.MaxArea(); break;
+                    case 55: LeetCode_55_Medium.ThreeSum(); break;
+                    case 56: LeetCode_56_Medium.MinSubArrayLen(); break;
+                    case 57: LeetCode_57_Medium.LengthOfLongestSubstring(); break;
+                    case 58: LeetCode_58_Medium.IsValidSudoku(); break;
+                    case 59: LeetCode_59_Medium.SpiralOrder(); break;
                     //case 60: LeetCode_60_Medium.(); break;
-                    
+
                     //case 61: LeetCode__Medium.(); break;
                     //case 62: LeetCode__Medium.(); break;
                     //case 63: LeetCode__Medium.(); break;
@@ -169,7 +188,7 @@ namespace Trees
                     //case 69: LeetCode__Medium.(); break;
                     //case 70: LeetCode__Medium.(); break;
                     //case 71: LeetCode__Medium.(); break;
-                    //case 72: LeetCode__Medium.(); break;
+                    case 72: LeetCode_72_Medium.ReverseBetween(); break;
                     //case 73: LeetCode__Medium.(); break;
                     //case 74: LeetCode__Medium.(); break;
                     //case 75: LeetCode__Medium.(); break;
@@ -208,8 +227,8 @@ namespace Trees
                     //case 106: LeetCode__Medium.(); break;
                     //case 107: LeetCode__Medium.(); break;
                     //case 108: LeetCode__Medium.(); break;
-                    //case 109: LeetCode__Medium.(); break;
-                    //case 110: LeetCode__Medium.(); break;
+                    case 109: LeetCode_109_Medium.MaxSubArray(); break;
+                    case 110: LeetCode_110_Medium.MaxSubarraySumCircular(); break;
 
                     //case 111: LeetCode__Medium.(); break;
                     //case 112: LeetCode__Medium.(); break;
@@ -224,9 +243,9 @@ namespace Trees
 
                     //case 121: LeetCode__Medium.(); break;
                     //case 122: LeetCode__Medium.(); break;
-                    //case 123: LeetCode__Medium.(); break;
+                    case 123: LeetCode_123_Medium.WordBreak(); break;
                     //case 124: LeetCode__Medium.(); break;
-                    //case 125: LeetCode__Medium.(); break;
+                    case 125: LeetCode_125_Medium.LengthOfLIS(); break;
                     //case 126: LeetCode__Medium.(); break;
                     //case 127: LeetCode__Medium.(); break;
                     //case 128: LeetCode__Medium.(); break;

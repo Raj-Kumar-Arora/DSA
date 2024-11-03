@@ -7,22 +7,22 @@ namespace LeetCodeProblems.LeetCode_150
         public static void AverageOfLevels()
         {
             ////// CASE - 1
-            //BinaryTree bt = new BinaryTree();
-            //bt.root = new Node(3);
-            //    bt.root.left = new Node(9);
-            //    bt.root.right = new Node(20);
-            //        bt.root.right.left = new Node(15);
-            //        bt.root.right.right = new Node(7);
-            ////int expectedOutput = 6;
+            BinaryTree bt = new BinaryTree();
+            bt.root = new Node(3);
+            bt.root.left = new Node(9);
+            bt.root.right = new Node(20);
+            bt.root.right.left = new Node(15);
+            bt.root.right.right = new Node(7);
+            //int expectedOutput = 6;
 
             //// CASE - 2
-            BinaryTree bt = new BinaryTree();
-            bt.root = new Node(2147483647);
-            bt.root.left = new Node(2147483647);
-            bt.root.right = new Node(2147483647);
+            //BinaryTree bt = new BinaryTree();
+            //bt.root = new Node(2147483647);
+            //bt.root.left = new Node(2147483647);
+            //bt.root.right = new Node(2147483647);
             var actualOutput = AverageOfLevels(bt.root);
 
-            //Console.WriteLine("Actual Output = " + actualOutput);
+            Console.WriteLine("Actual Output = " + actualOutput);
         }
         private static IList<double> AverageOfLevels(Node root)
         {

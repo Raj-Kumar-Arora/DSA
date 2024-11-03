@@ -1,6 +1,6 @@
 ﻿namespace LeetCodeProblems.LeetCode_150
 {
-    internal static class LeetCode__Medium
+    internal static class LeetCode_5_Medium
     {
         public static void t()
         {
@@ -34,7 +34,7 @@
             Console.Read();
         }
 
-        public static int t(int[] citations)
+        public static int t(int[] a)
         {
 
             return 0;
