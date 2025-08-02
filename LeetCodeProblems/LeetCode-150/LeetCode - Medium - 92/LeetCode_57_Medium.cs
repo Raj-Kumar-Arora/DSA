@@ -40,8 +40,47 @@ namespace LeetCodeProblems.LeetCode_150
             Console.Read();
         }
 
+        //TO Understand it later- Its also almost similar to my WORKING solution at line no 64
+        //https://leetcode.com/problems/longest-substring-without-repeating-characters/solutions/4701201/simple-solution-with-better-explanation/
+        public static int LengthOfLongestSubstring(string s)
+        {
+            // Check if the length of the string is less than 2
+            if (s.Length < 2)
+            {
+                return s.Length;
+            }
 
-        private static int LengthOfLongestSubstring(string s)
+            // Initialize variables
+            int k = 0, maxLen = 0, count = 0;
+
+            // Iterate through the string
+            for (int i = 1; i < s.Length; i++)
+            {
+                // Check for repeating characters in the current substring
+                for (int j = k; j < i; j++)
+                {
+                    if (s[i] == s[j])
+                    {
+                        k = j + 1;
+                    }
+                }
+
+                // Update the current substring length
+                count = i - k + 1;
+
+                // Update the maximum length
+                if (count > maxLen)
+                {
+                    maxLen = count;
+                }
+            }
+
+            // Return the result
+            return maxLen;
+        }
+
+        //WORKIGN - MY solution - not efficient
+        private static int LengthOfLongestSubstring_(string s)
         {
             // StringBuilder sb = new();
             List<char> subStr = new List<char>();

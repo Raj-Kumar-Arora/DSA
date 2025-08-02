@@ -89,7 +89,7 @@ namespace LeetCodeProblems
                 Console.Write("\nSelect sub-option from above LeetCode problem: ");
 
                 //int.TryParse(Console.ReadLine(), out selectedSubOptionInt);
-                selectedSubOptionInt =  210;
+                selectedSubOptionInt =  16;
                 Console.WriteLine("");
 
                 Console.WriteLine("Selected sub-option: " + selectedSubOptionInt.ToString() + "\n");
@@ -111,6 +111,9 @@ namespace LeetCodeProblems
                     case 208: Top_15_Patterns.LeetCodePatterns_9_8.OrangesRotting(); break;
                     case 209: Top_15_Patterns.LeetCodePatterns_9_9.FloodFill(); break;
                     case 210: Top_15_Patterns.LeetCodePatterns_9_10.Permute(); break;
+                    case 211: Top_15_Patterns.LeetCodePatterns_9_11.FindKthLargest(); break;
+                    case 212: Top_15_Patterns.LeetCodePatterns_9_12.TopKFrequent(); break;
+                    case 213: Top_15_Patterns.LeetCodePatterns_9_13.NextGreaterElement(); break;
 
                     // LEETCODE TOP 150 PROBLEMS
                     case 1: LeetCode_01_Easy.Merge(); break;

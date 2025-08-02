@@ -5,11 +5,11 @@
         public static void getNextNo()
         {
             //Case - 1
-            //int n = 19;
+            int n = 19;
             //bool expectedOutput = true;
 
             //Case - 2
-            int n = 2;
+            //int n = 2;
             //bool expectedOutput = false;
 
             //Case - 3

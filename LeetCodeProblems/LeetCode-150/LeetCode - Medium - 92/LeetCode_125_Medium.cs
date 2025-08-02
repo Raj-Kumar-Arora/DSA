@@ -23,12 +23,38 @@ namespace LeetCodeProblems.LeetCode_150
             Console.WriteLine("Actual Output  = " + actualOutput);
             Console.Read();
         }
+        
+        //NOT WORKING
+        private static int LengthOfLIS_2(int[] s)
+        {
+            if (s.Length <= 0)
+            {
+                return 0;
+            }
+            else if (s.Length == 1)
+            {
+                return 1;
+            }
 
+            int lis = 1;
+            int pi = 0;   //previous index
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] > s[pi])
+                {
+                    lis++;  //increment lis count
+                    pi = i;  //update previous index
+                }
+            }
+
+            return lis;
+        }
         //See line 90 for WORKING code
 
-        //NOT WORKING - need to check how to fix
-        //REf https://www.youtube.com/watch?v=cjWnW0hdF1Y
-        private static int LengthOfLIS_2(int[] nums)
+        //WORKING - DYNAMIC APPROACH
+        //Ref https://www.youtube.com/watch?v=cjWnW0hdF1Y
+        private static int LengthOfLIS(int[] nums)
         {
             var l = nums.Length;
             if (l == 1) return 1;
@@ -36,65 +62,22 @@ namespace LeetCodeProblems.LeetCode_150
             var lis = new int[l];
             Array.Fill(lis, 1);
 
-            //List<int> lis = new List<int>();
-            //for (var i = 0; i < l; i++) lis[i] = 1;
-
             for (int i = l-1; i>0; i--)
             {
-                for (int j = i+1; i<l; i++)
+                for (int j = i+1; j<l; j++)
                 {
-                    lis[i] = Math.Max(lis[i], 1 + lis[j]);
+                    if (nums[i] < nums[j])
+                        lis[i] = Math.Max(lis[i], 1 + lis[j]);
                 }
             }
 
-            return lis.Length;
+            return lis.Max();
         }
 
-        //{
-        //    // The max variable holds the result
-        //    int max_ref = 1;
-
-        //    // The function _lis() stores its result in max
-        //    findLIS(nums, nums.Length, max_ref);
-
-        //    // Returns max
-        //    return max_ref;
-        //}
-
-        //private static int findLIS(int[] arr, int n,int max_ref)
-        //{
-        //    // Base case
-        //    if (n == 1)
-        //        return 1;
-
-        //    // 'max_ending_here' is length of LIS ending with
-        //    // arr[n-1]
-        //    int res, max_ending_here = 1;
-
-        //    // Recursively get all LIS ending with arr[0],
-        //    // arr[1] ... arr[n-2]. If   arr[i-1] is smaller
-        //    // than arr[n-1], and max ending with arr[n-1] needs
-        //    // to be updated, then update it
-        //    for (int i = 1; i < n; i++)
-        //    {
-        //        res = findLIS(arr, i, max_ref);
-        //        if (arr[i - 1] < arr[n - 1]
-        //            && res + 1 > max_ending_here)
-        //            max_ending_here = res + 1;
-        //    }
-
-        //    // Compare max_ending_here with the overall max
-        //    // and update the overall max if needed
-        //    if (max_ref < max_ending_here)
-        //        max_ref = max_ending_here;
-
-        //    // Return length of LIS ending with arr[n-1]
-        //    return max_ending_here;
-        //}
-
-
+        /**********************/
+        //WORKING - BEST Approach -  - 2nd approach using BINARAY SEARCH
         //https://leetcode.com/problems/longest-increasing-subsequence/
-        private static int LengthOfLIS (int[] nums)
+        private static int LengthOfLIS_ (int[] nums)
         {
             List<int> sub = new List<int>();
             sub.Add(nums[0]);
